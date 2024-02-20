@@ -1,0 +1,17 @@
+|decodificador
+num[0] => Decoder0.IN3
+num[1] => Decoder0.IN2
+num[1] => Decoder1.IN2
+num[2] => Decoder0.IN1
+num[2] => Decoder1.IN1
+num[3] => Decoder0.IN0
+num[3] => Decoder1.IN0
+salida[0] << WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+salida[1] << WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+salida[2] << WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+salida[3] << WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+salida[4] << WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+salida[5] << WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+salida[6] << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
