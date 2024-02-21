@@ -1,5 +1,5 @@
 Flow report for ContadorNBits
-Tue Feb 20 23:41:57 2024
+Wed Feb 21 00:33:58 2024
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Tue Feb 20 23:41:57 2024          ;
+; Flow Status                     ; Successful - Wed Feb 21 00:33:58 2024          ;
 ; Quartus Prime Version           ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                   ; ContadorNBits                                  ;
 ; Top-level Entity Name           ; ContadorNBits                                  ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/20/2024 23:40:44 ;
+; Start date & time ; 02/21/2024 00:32:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ContadorNBits       ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 38917505025.170849404302620            ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 38917505025.170849717321448            ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -92,6 +92,8 @@ https://fpgasoftware.intel.com/eula.
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
@@ -101,12 +103,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4866 MB             ; 00:00:10                           ;
-; Fitter               ; 00:00:49     ; 1.0                     ; 6734 MB             ; 00:00:51                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4869 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 5177 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4731 MB             ; 00:00:01                           ;
-; Total                ; 00:01:09     ; --                      ; --                  ; 00:01:09                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4854 MB             ; 00:00:09                           ;
+; Fitter               ; 00:00:44     ; 1.0                     ; 6733 MB             ; 00:00:55                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4868 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 5172 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4730 MB             ; 00:00:01                           ;
+; Total                ; 00:01:01     ; --                      ; --                  ; 00:01:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
