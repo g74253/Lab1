@@ -8,38 +8,37 @@ END Sumador_4bits_TB;
  
 ARCHITECTURE behavior OF Sumador_4bits_TB IS 
  
-    COMPONENT Sumador_4bit
+    COMPONENT Sumador_4bits
     PORT(
-         A : IN  std_logic_vector(3 downto 0);
-         B : IN  std_logic_vector(3 downto 0);
-         Cin : IN  std_logic;
-			Sum : OUT  std_logic_vector(3 downto 0);
-         Cout : OUT  std_logic
+         iA : IN  std_logic_vector(3 downto 0);
+         iB : IN  std_logic_vector(3 downto 0);
+         iCin : IN  std_logic;
+         Cout : OUT  std_logic;
+			oSum : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal A : std_logic_vector(3 downto 0) := (others => '0');
-   signal B : std_logic_vector(3 downto 0) := (others => '0');
-   signal Cin : std_logic := '0';
+   signal iA : std_logic_vector(3 downto 0) := (others => '0');
+   signal iB : std_logic_vector(3 downto 0) := (others => '0');
+   signal iCin : std_logic := '0';
 
  	--Outputs
    signal Cout : std_logic;
-   signal Sum : std_logic_vector(3 downto 0);
+   signal oSum : std_logic_vector(3 downto 0);
  
  
  
 BEGIN
  
 	--Unit Under Test (UUT)
-   uut: Sumador_4bit PORT MAP (
-          A => A,
-          B => B,
-          Cin => Cin,
-			 Sum => Sum,
-          Cout => Cout
-        );
+   uut: Sumador_4bits PORT MAP (
+          iA => iA,
+          iB => iB,
+          iCin => iCin,
+          Cout => Cout,
+			 oSum => oSum );
 
 
    -- Stimulus process
@@ -47,22 +46,22 @@ BEGIN
    begin		
       wait for 100 ns;	
 
-		A<="0010";
-		B<="0011";
+		iA<="0010";
+		iB<="0011";
 		
       wait for 10 ns;
 		
-		A<="1010";
-		B<="0001";
+		iA<="1010";
+		iB<="0001";
 		
      wait for 10 ns;	
 	  
-	   A<="1010";
-		B<="0001";
+	   iA<="1111";
+		iB<="1111";
 	  
      wait for 10 ns;	
-		A<="1110";
-		B<="0101";
+		iA<="1110";
+		iB<="0101";
 
       wait;
    end process;
