@@ -2,13 +2,24 @@ module ALU_case #(parameter n=4)
 					 (input logic [n-1:0] entrada1,  
 					  input logic [n-1:0] entrada2, 
 					  input logic [3:0] selector, 
-					  output logic [3:0]resultado);
-					  
+					  output logic [3:0]resultado,
+					  output logic carry, 
+					  output logic cero);
+	
+	logic [3:0] temp_resultado_suma;
+	logic temp_carry_suma;
+	logic temp_cero_suma;
+
+	suma_parametrizable suma (entrada1,entrada2,temp_resultado_suma,temp_carry_suma,temp_cero_suma);
+	
 	always @(selector,entrada1,entrada2)
 	begin
 		case(selector)
 			4'b0000://aqui va suma
 				begin
+				resultado = temp_resultado_suma;
+				carry = temp_carry_suma;
+				cero = temp_cero_suma;
 				end
 			4'b0001: //aqui va resta
 				begin
