@@ -54,20 +54,37 @@ module ALU_case #(parameter n=4)
 	logic temp_cero_div;
 	logic temp_desbordamiento_div;
 	
+	//shiftLeft
+	logic [3:0] temp_resultado_shiftLeft;
+	logic [3:0] temp_residuo_shiftLeft;
+	logic temp_cero_shiftLeft;
+
+	//shiftRight
+	logic [3:0] temp_resultado_shiftRight;
+	logic [3:0] temp_residuo_shiftRight;
+	logic temp_cero_shiftRight;
+	
+	//exponencial
+	logic [3:0] temp_resultado_exponencial;
+	logic temp_cero_exponencial;
+	logic temp_desbordamiento_exponencial;
+	logic temp_carry_exponencial;
+	
 	suma_parametrizable suma (entrada1,entrada2,temp_resultado_suma,temp_carry_suma,temp_cero_suma);
-	
 	resta rest (entrada1, entrada2, temp_resultado_resta, temp_carry_resta, temp_negativo_resta, temp_desbordamiento_resta, temp_cero_resta);
-	
 	mult multiplicacion  (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
-	
 	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
-	
 	div division  (entrada1, entrada2, temp_resultado_div, temp_residuo_div, temp_carry_div, temp_negativo_div, temp_desbordamiento_div, temp_cero_div);
+	exponencial expo(entrada1, entrada2, temp_resultado_exponencial,temp_cero_exponencial);
+	
+
+	
 	
 	xor_op xor_m (entrada1, entrada2,temp_resultado_Xor,temp_cero_Xor);
 	or_op or_m(entrada1, entrada2,temp_resultado_Or,temp_cero_Or);
 	and_op and_m(entrada1, entrada2,temp_resultado_And,temp_cero_And);
-
+	shift_left_op shiftLeft(entrada1, entrada2,temp_resultado_shiftLeft);
+	shift_right_op shiftRight(entrada1, entrada2,temp_resultado_shiftRight);
 	
 
 	
@@ -140,9 +157,35 @@ module ALU_case #(parameter n=4)
 				end
 			4'b1001://shift left logic
 				begin
+					resultado=temp_resultado_shiftLeft;
+					cero= temp_cero_shiftLeft;
+					carry=0;
+					negativo=0;
+					desbordamiento=0;	
+					
+					
+				
 				end
 			4'b1010:// shift right logic
 				begin
+				
+					resultado=temp_resultado_shiftRight;
+					cero= temp_cero_shiftRight;
+					carry=0;
+					negativo=0;
+					desbordamiento=0;	
+				
+				end
+			4'b1011: // exponencial 
+				begin
+				
+								
+					resultado=temp_resultado_exponencial;
+					cero= temp_cero_exponencial;
+					carry=temp_carry_exponencial;
+					negativo=0;
+					desbordamiento=0;	
+				
 				end
 		endcase
 	end

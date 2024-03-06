@@ -1,8 +1,13 @@
-module shift_left_op(
-    input logic [3:0] data_in,
-    output logic [3:0] shifted_data
+module shift_left_op #(
+    parameter M = 4
+)(
+    input logic [M-1:0] entrada1,
+    input logic [M-1:0] entrada2,
+    output logic [M-1:0] resultado,
+    output logic cero
 );
 
-assign shifted_data = {data_in[2:0], 1'b0}; // Desplaza los bits hacia la izquierda y añade un 0 al final
+assign resultado = entrada1 <<< entrada2;
+assign cero = ~(resultado || '0);
 
 endmodule
