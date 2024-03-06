@@ -16,10 +16,11 @@ module resta
 	
 	generate
 	
+
 		for (i = 0; i < M; i += 1) begin : GenSumadores
 
-			suma sumador (.A(A[i]), .B(~B[i] ), .cin(cins[i]), .cout(cins[i + 1]),
-									.R(R[i]));
+			suma sumador (.entrada1(A[i]), .entrada2(~B[i] ), .carry_in(cins[i]), .carry_out(cins[i + 1]),
+									.resultado(R[i]));
 
 		end
 		

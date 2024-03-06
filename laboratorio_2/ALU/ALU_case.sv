@@ -62,13 +62,14 @@ module ALU_case #(parameter n=4)
 	
 	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
 	
-<<<<<<< HEAD
+	div division  (entrada1, entrada2, temp_resultado_div, temp_residuo_div, temp_carry_div, temp_negativo_div, temp_desbordamiento_div, temp_cero_div);
+	
 	xor_op xor_m (entrada1, entrada2,temp_resultado_Xor,temp_cero_Xor);
 	or_op or_m(entrada1, entrada2,temp_resultado_Or,temp_cero_Or);
 	and_op and_m(entrada1, entrada2,temp_resultado_And,temp_cero_And);
-=======
-	div division  (entrada1, entrada2, temp_resultado_div, temp_residuo_div, temp_carry_div, temp_negativo_div, temp_desbordamiento_div, temp_cero_div);
->>>>>>> Mario-Shift
+
+	
+
 	
 	always @(selector,entrada1,entrada2)
 	begin
