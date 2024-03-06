@@ -72,11 +72,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "entrada1[0]",
+					"name" : "entrada2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "entrada2[0]",
+					"name" : "entrada1[0]",
 					"strict" : false
 				},
 				{
@@ -92,11 +92,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "entrada2[2]",
+					"name" : "entrada1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "entrada1[3]",
+					"name" : "entrada2[2]",
 					"strict" : false
 				},
 				{

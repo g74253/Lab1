@@ -1,6 +1,6 @@
 EDA Netlist Writer report for ALU
-Wed Mar 06 00:43:00 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Wed Mar  6 01:54:07 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Mar 06 00:42:59 2024 ;
+; EDA Netlist Writer Status ; Successful - Wed Mar  6 01:54:07 2024 ;
 ; Revision Name             ; ALU                                   ;
 ; Top-level Entity Name     ; ALU_deco                              ;
 ; Family                    ; Cyclone V                             ;
@@ -45,34 +45,34 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------+---------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                    ;
-+---------------------------------------------------------------------------------------------------+--------------------+
-; Option                                                                                            ; Setting            ;
-+---------------------------------------------------------------------------------------------------+--------------------+
-; Tool Name                                                                                         ; ModelSim (Verilog) ;
-; Generate functional simulation netlist                                                            ; On                 ;
-; Truncate long hierarchy paths                                                                     ; Off                ;
-; Map illegal HDL characters                                                                        ; Off                ;
-; Flatten buses into individual nodes                                                               ; Off                ;
-; Maintain hierarchy                                                                                ; Off                ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                ;
-; Enable glitch filtering                                                                           ; Off                ;
-; Do not write top level VHDL entity                                                                ; Off                ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                ;
-; Architecture name in VHDL output netlist                                                          ; structure          ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                ;
-+---------------------------------------------------------------------------------------------------+--------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                     ;
++---------------------------------------------------------------------------------------------------+---------------------+
+; Option                                                                                            ; Setting             ;
++---------------------------------------------------------------------------------------------------+---------------------+
+; Tool Name                                                                                         ; QuestaSim (Verilog) ;
+; Generate functional simulation netlist                                                            ; On                  ;
+; Truncate long hierarchy paths                                                                     ; Off                 ;
+; Map illegal HDL characters                                                                        ; Off                 ;
+; Flatten buses into individual nodes                                                               ; Off                 ;
+; Maintain hierarchy                                                                                ; Off                 ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                 ;
+; Enable glitch filtering                                                                           ; Off                 ;
+; Do not write top level VHDL entity                                                                ; Off                 ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                 ;
+; Architecture name in VHDL output netlist                                                          ; structure           ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                 ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                 ;
++---------------------------------------------------------------------------------------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                            ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                       ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; C:/Users/adrii/OneDrive/Documentos/GitHub/gochoa_digital_design_lab_2024/laboratorio_2/ALU/simulation/modelsim/ALU.vo ;
-+-----------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                    ;
++-------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                               ;
++-------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/mario/OneDrive/Documentos/QUARTUS PROJECTS/gochoa_digital_design_lab_2024/laboratorio_2/ALU/simulation/questa/ALU.vo ;
++-------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -80,15 +80,15 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Mar 06 00:42:59 2024
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Wed Mar  6 01:54:06 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ALU.vo in folder "C:/Users/adrii/OneDrive/Documentos/GitHub/gochoa_digital_design_lab_2024/laboratorio_2/ALU/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ALU.vo in folder "C:/Users/mario/OneDrive/Documentos/QUARTUS PROJECTS/gochoa_digital_design_lab_2024/laboratorio_2/ALU/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4728 megabytes
-    Info: Processing ended: Wed Mar 06 00:43:00 2024
+    Info: Peak virtual memory: 4733 megabytes
+    Info: Processing ended: Wed Mar  6 01:54:07 2024
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

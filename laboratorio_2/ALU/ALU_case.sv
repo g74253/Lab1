@@ -27,11 +27,21 @@ module ALU_case #(parameter n=4)
 	logic temp_cero_mod;
 	logic temp_desbordamiento_mod;	
 
+	//division
+	logic [3:0] temp_resultado_div;
+	logic [3:0] temp_residuo_div;
+	logic temp_carry_div;
+	logic temp_negativo_div;
+	logic temp_cero_div;
+	logic temp_desbordamiento_div;
+	
 	suma_parametrizable suma (entrada1,entrada2,temp_resultado_suma,temp_carry_suma,temp_cero_suma);
 	
 	mult multiplicacion  (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
 	
 	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
+	
+	div division  (entrada1, entrada2, temp_resultado_div, temp_residuo_div, temp_carry_div, temp_negativo_div, temp_desbordamiento_div, temp_cero_div);
 	
 	always @(selector,entrada1,entrada2)
 	begin
@@ -53,8 +63,13 @@ module ALU_case #(parameter n=4)
 				negativo = temp_negativo_mult;
 				desbordamiento = temp_desbordamiento_mult;
 				end
-			4'b0100://aqui va divicion
+			4'b0100://aqui va division
 				begin
+				resultado = temp_resultado_div;
+				carry = temp_carry_div;
+				cero = temp_cero_div;
+				negativo = temp_negativo_div;
+				desbordamiento = temp_desbordamiento_div;
 				end
 			4'b0101:// modulo
 				begin
