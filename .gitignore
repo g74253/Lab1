@@ -73,3 +73,11 @@ incremental_db/
 db/
 _output_files/
 PLLJ_PLLSPE_INFO.txt
+laboratorio_2/ALU/ALU.qws
+laboratorio_2/ALU/db/ALU.(6).cnf.cdb
+*.qmsg
+*.rdb
+*.bpm
+*.cdb
+*.qmsg
+*.hier_info
