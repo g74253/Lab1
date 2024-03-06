@@ -26,12 +26,29 @@ module ALU_case #(parameter n=4)
 	logic temp_negativo_mod;
 	logic temp_cero_mod;
 	logic temp_desbordamiento_mod;	
+	
+	//Operacion AND
+	logic [3:0] temp_resultado_And;
+	logic temp_cero_And;
+	
+	//Operacion XOR
+	logic [3:0] temp_resultado_Xor;
+	logic temp_cero_Xor;
+	
+	//Operacion OR
+	logic [3:0] temp_resultado_Or;
+	logic temp_cero_Or;
+	
 
 	suma_parametrizable suma (entrada1,entrada2,temp_resultado_suma,temp_carry_suma,temp_cero_suma);
 	
 	mult multiplicacion  (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
 	
 	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
+	
+	xor_op xor_m (entrada1, entrada2,temp_resultado_Xor,temp_cero_Xor);
+	or_op or_m(entrada1, entrada2,temp_resultado_Or,temp_cero_Or);
+	and_op and_m(entrada1, entrada2,temp_resultado_And,temp_cero_And);
 	
 	always @(selector,entrada1,entrada2)
 	begin
@@ -66,12 +83,33 @@ module ALU_case #(parameter n=4)
 				end
 			4'b0110:// and
 				begin
+				resultado=temp_resultado_And;
+				cero= temp_cero_And;
+				carry=0;
+				negativo=0;
+				desbordamiento=0;
+				
+				
 				end
 			4'b0111://or
 				begin
+				
+				resultado=temp_resultado_Or;
+				cero= temp_cero_Or;
+				carry=0;
+				negativo=0;
+				desbordamiento=0;
+				
 				end
 			4'b1000://xor
 				begin
+				resultado=temp_resultado_Xor;
+				cero= temp_cero_Xor;
+				carry=0;
+				negativo=0;
+				desbordamiento=0;
+				
+				
 				end
 			4'b1001://shift left logic
 				begin

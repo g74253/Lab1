@@ -6,6 +6,7 @@ module ALU_deco #(parameter n=4)
 					  input logic [3:0] selector, 
 					  output logic [6:0]display1,
 					  output logic [3:0] selectorLedDisplay,
+					  
 					  output logic [6:0]display2,
 					  output logic carry, 
 					  output logic cero);
