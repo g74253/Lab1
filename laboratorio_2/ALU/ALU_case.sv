@@ -74,7 +74,7 @@ module ALU_case #(parameter n=4)
 	resta rest (entrada1, entrada2, temp_resultado_resta, temp_carry_resta, temp_negativo_resta, temp_desbordamiento_resta, temp_cero_resta);
 	mult multiplicacion  (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
 	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
-	div division  (entrada1, entrada2, temp_resultado_div, temp_residuo_div, temp_carry_div, temp_negativo_div, temp_desbordamiento_div, temp_cero_div);
+	div_op division  (entrada1, entrada2, temp_resultado_div, temp_residuo_div, temp_carry_div, temp_negativo_div, temp_desbordamiento_div, temp_cero_div);
 	exponencial expo(entrada1, entrada2, temp_resultado_exponencial,temp_cero_exponencial);
 	
 

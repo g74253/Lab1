@@ -9,7 +9,9 @@ module ALU_deco #(parameter n=4)
 					  
 					  output logic [6:0]display2,
 					  output logic carry, 
-					  output logic cero);
+					  output logic cero,
+					  output logic negativo,
+					  output logic desbordamiento);
 					  
 	logic [3:0]resultado;
 	

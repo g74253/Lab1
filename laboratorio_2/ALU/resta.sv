@@ -14,6 +14,11 @@ module resta
 
 	genvar i;
 	
+	assign N = B>A;
+	
+	assign Z = B==A;
+	
+	
 	generate
 	
 
@@ -28,6 +33,6 @@ module resta
 	
 	assign C = cins[M];
 	
-	assign Z = ~(R || '0) && ~C;
+
 
 endmodule
