@@ -12,6 +12,12 @@ module ALU_case #(parameter n=4)
 	logic temp_carry_suma;
 	logic temp_cero_suma;
 	
+	//Resta
+	logic [3:0] temp_resultado_resta;
+	logic temp_carry_resta;
+	logic temp_negativo_resta;
+	logic temp_cero_resta;
+	logic temp_desbordamiento_resta;
 	
 	//Multiplicacion
 	logic [3:0] temp_resultado_mult;
@@ -40,15 +46,29 @@ module ALU_case #(parameter n=4)
 	logic temp_cero_Or;
 	
 
+	//division
+	logic [3:0] temp_resultado_div;
+	logic [3:0] temp_residuo_div;
+	logic temp_carry_div;
+	logic temp_negativo_div;
+	logic temp_cero_div;
+	logic temp_desbordamiento_div;
+	
 	suma_parametrizable suma (entrada1,entrada2,temp_resultado_suma,temp_carry_suma,temp_cero_suma);
+	
+	resta rest (entrada1, entrada2, temp_resultado_resta, temp_carry_resta, temp_negativo_resta, temp_desbordamiento_resta, temp_cero_resta);
 	
 	mult multiplicacion  (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
 	
 	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
 	
+<<<<<<< HEAD
 	xor_op xor_m (entrada1, entrada2,temp_resultado_Xor,temp_cero_Xor);
 	or_op or_m(entrada1, entrada2,temp_resultado_Or,temp_cero_Or);
 	and_op and_m(entrada1, entrada2,temp_resultado_And,temp_cero_And);
+=======
+	div division  (entrada1, entrada2, temp_resultado_div, temp_residuo_div, temp_carry_div, temp_negativo_div, temp_desbordamiento_div, temp_cero_div);
+>>>>>>> Mario-Shift
 	
 	always @(selector,entrada1,entrada2)
 	begin
@@ -61,6 +81,11 @@ module ALU_case #(parameter n=4)
 				end
 			4'b0010: //aqui va resta
 				begin
+				resultado = temp_resultado_resta;
+				carry = temp_carry_resta;
+				cero = temp_cero_resta;
+				negativo = temp_negativo_resta;
+				desbordamiento = temp_desbordamiento_resta;
 				end
 			4'b0011: //aqui va multiplicacion
 				begin
@@ -70,8 +95,13 @@ module ALU_case #(parameter n=4)
 					negativo = temp_negativo_mult;
 					desbordamiento = temp_desbordamiento_mult;
 				end
-			4'b0100://aqui va divicion
+			4'b0100://aqui va division
 				begin
+				resultado = temp_resultado_div;
+				carry = temp_carry_div;
+				cero = temp_cero_div;
+				negativo = temp_negativo_div;
+				desbordamiento = temp_desbordamiento_div;
 				end
 			4'b0101:// modulo
 				begin
