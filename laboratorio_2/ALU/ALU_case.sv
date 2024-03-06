@@ -21,7 +21,7 @@ module ALU_case #(parameter n=4)
 	logic temp_desbordamiento_mult;	
 	
 	//Modulo
-	logic [3:0] temp_resultado_mod:
+	logic [3:0] temp_resultado_mod;
 	logic temp_carry_mod;
 	logic temp_negativo_mod;
 	logic temp_cero_mod;
@@ -29,23 +29,23 @@ module ALU_case #(parameter n=4)
 
 	suma_parametrizable suma (entrada1,entrada2,temp_resultado_suma,temp_carry_suma,temp_cero_suma);
 	
-	multiplicacion mult (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
+	mult multiplicacion  (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
 	
-	mod modulo (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod)
+	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
 	
 	always @(selector,entrada1,entrada2)
 	begin
 		case(selector)
-			4'b0000://aqui va suma
+			4'b0001://aqui va suma
 				begin
 				resultado = temp_resultado_suma;
 				carry = temp_carry_suma;
 				cero = temp_cero_suma;
 				end
-			4'b0001: //aqui va resta
+			4'b0010: //aqui va resta
 				begin
 				end
-			4'b0010: //aqui va multiplicacion
+			4'b0011: //aqui va multiplicacion
 				begin
 				resultado = temp_resultado_mult;
 				carry = temp_carry_mult;
@@ -53,10 +53,10 @@ module ALU_case #(parameter n=4)
 				negativo = temp_negativo_mult;
 				desbordamiento = temp_desbordamiento_mult;
 				end
-			4'b0011://aqui va divicion
+			4'b0100://aqui va divicion
 				begin
 				end
-			4'b0100:// modulo
+			4'b0101:// modulo
 				begin
 				resultado = temp_resultado_mod;
 				carry = temp_carry_mod;
@@ -64,19 +64,19 @@ module ALU_case #(parameter n=4)
 				negativo = temp_negativo_mod;
 				desbordamiento = temp_desbordamiento_mod;
 				end
-			4'b0101:// and
+			4'b0110:// and
 				begin
 				end
-			4'b0110://or
+			4'b0111://or
 				begin
 				end
-			4'b0111://xor
+			4'b1000://xor
 				begin
 				end
-			4'b1000://shift left logic
+			4'b1001://shift left logic
 				begin
 				end
-			4'b1001:// shift right logic
+			4'b1010:// shift right logic
 				begin
 				end
 		endcase

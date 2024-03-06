@@ -43,8 +43,14 @@
 *.ptf.*
 *.qar
 *.qarlog
+
 *.qws
 *.rpt
+*.cdb
+*.bpm
+*.rdb
+*.hsd
+*.qmsg
 *.smsg
 *.sof
 *.sopc_builder
