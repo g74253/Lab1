@@ -12,6 +12,12 @@ module ALU_case #(parameter n=4)
 	logic temp_carry_suma;
 	logic temp_cero_suma;
 	
+	//Resta
+	logic [3:0] temp_resultado_resta;
+	logic temp_carry_resta;
+	logic temp_negativo_resta;
+	logic temp_cero_resta;
+	logic temp_desbordamiento_resta;
 	
 	//Multiplicacion
 	logic [3:0] temp_resultado_mult;
@@ -37,6 +43,8 @@ module ALU_case #(parameter n=4)
 	
 	suma_parametrizable suma (entrada1,entrada2,temp_resultado_suma,temp_carry_suma,temp_cero_suma);
 	
+	resta rest (entrada1, entrada2, temp_resultado_resta, temp_carry_resta, temp_negativo_resta, temp_desbordamiento_resta, temp_cero_resta);
+	
 	mult multiplicacion  (entrada1, entrada2, temp_resultado_mult, temp_carry_mult, temp_negativo_mult, temp_desbordamiento_mult, temp_cero_mult); 
 	
 	modulo mod  (entrada1, entrada2, temp_resultado_mod, temp_carry_mod, temp_negativo_mod, temp_desbordamiento_mod, temp_cero_mod);
@@ -54,6 +62,11 @@ module ALU_case #(parameter n=4)
 				end
 			4'b0010: //aqui va resta
 				begin
+				resultado = temp_resultado_resta;
+				carry = temp_carry_resta;
+				cero = temp_cero_resta;
+				negativo = temp_negativo_resta;
+				desbordamiento = temp_desbordamiento_resta;
 				end
 			4'b0011: //aqui va multiplicacion
 				begin
