@@ -1,30 +1,32 @@
 module div_op
 	#(parameter M = 4)(
-	  input 	logic [2*M-1:0] expresionA,
-	  input 	logic [M-1:0] 	 expresionB,
-	  
-	  output logic [M-1:0] 	 resultado,
-	  output				   	 carry,
-	  output						 cero);
+	  input 	logic [2*M-1:0] A,
+	  input 	logic [M-1:0] 	 B,
+	  output logic [M-1:0] 	 R,
+	  output logic [M-1:0] 	 Res,
+	  output				   	 C,
+	  output						 N,
+	  output						 V,
+	  output						 Z);
 	  
   logic [2*M-1:0] temp;
   logic [M-1:0] shift;
-  logic [M-1:0] 	 R;
-  assign temp = {expresionA, {M{1'b0}}};
+  
+  assign temp = {A, {M{1'b0}}};
   
   always @(*) begin
     shift = 0;
     R = 0;
     for (int i = M-1; i >= 0; i--) begin
       shift = {shift[0], temp[i+M]};
-      if (shift >= expresionB) begin
-        shift = shift - expresionB;
+      if (shift >= B) begin
+        shift = shift - B;
         R[i] = 1;
       end
     end
-    resultado = shift;
+    Res = shift;
 	 
-	 cero = ~(R || '0) && ~carry;
+	 Z = ~(R || '0) && ~C;
 	 
   end
 endmodule

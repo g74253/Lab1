@@ -1,29 +1,33 @@
-module mult
-	# (parameter M = 4)
-     (input logic signed [M-1:0] A,
-	   input logic signed [M-1:0] B,
-	   output logic signed [2*M-1:0] R,
-	   output				   C,
-	   output					N,
-	   output					V,
-	   output					Z);
+module mult #(
+    parameter M = 4
+)(
+    input logic signed [M-1:0] A,
+    input logic signed [M-1:0] B,
+    output logic signed [2*M-1:0] R,
+    output logic C,
+    output logic N,
+    output logic V,
+    output logic Z
+);
 
-  logic signed [2*M-1:0] temp_R;
-  
-  integer i, j;
+    logic signed [2*M-1:0] temp_R;
+    logic [2*M:0] carry;
 
-  always_comb begin
-    temp_R = 0;
-    for (i = 0; i < M; i++) begin
-      if (B[i] == 1'b1) begin
-        temp_R = temp_R + (A << i);
-      end
+    // Multiplicación parcial
+    always_comb begin
+        temp_R = 0;
+        carry = 0;
+        for (int i = 0; i < M; i++) begin
+            if (B[i] == 1'b1) begin
+                // Realizar la multiplicación y sumar al resultado parcial
+                {temp_R, carry} = temp_R + (A << i) + carry;
+            end
+        end
+        R = temp_R;
+        C = carry[M];
+        N = (temp_R < 0);
+        V = 0; // No se usa en la multiplicación
+        Z = (temp_R == 0);
     end
-    R = temp_R;
-	 
-	 Z = ~(R || '0) && ~C;
-	 
-  end
 
 endmodule
-
