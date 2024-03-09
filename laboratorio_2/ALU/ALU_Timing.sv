@@ -1,4 +1,4 @@
-module ALU_Timing #(parameter n=4)(
+module ALU_Timing #(parameter n=32)(
 					  input logic clock,
 					  input logic [n-1:0] entrada1,  
 					  input logic [n-1:0] entrada2, 
@@ -36,7 +36,7 @@ flipflop_entradas_parametrizable flip_entrada(entrada1,entrada2,selector,reset,c
 					 
 
 
-ALU_deco #(32) ALU ( 	  
+ALU_deco #(4) ALU ( 	  
 					  salida1,  
 					  salida2, 
 					  salida_selector, 
