@@ -13,14 +13,14 @@ module ALU_deco #(parameter n=4)
 					  output logic negativo,
 					  output logic desbordamiento);
 					  
-	logic [3:0]resultado;
+	logic [n-1:0]resultado;
 	
 	
 	assign selectorLedDisplay[0]= ~selector[0];
 	assign selectorLedDisplay[1]= ~selector[1];
 	assign selectorLedDisplay[2]= ~selector[2];
 	assign selectorLedDisplay[3]= ~selector[3];
-	ALU_case calculadora(.entrada1(entrada1),.entrada2(entrada2),.selector(selectorLedDisplay),.resultado(resultado),.carry(carry),.negativo(negativo),.cero(cero),.desbordamiento(desbordamiento));
+	ALU_case #(n) calculadora(.entrada1(entrada1),.entrada2(entrada2),.selector(selectorLedDisplay),.resultado(resultado),.carry(carry),.negativo(negativo),.cero(cero),.desbordamiento(desbordamiento));
 	
 	decodificador d1(
 		.c(display1), 

@@ -19,7 +19,7 @@ genvar i;
 generate
 		for(i = 0; i < parametro; i = i+1)
 			begin:flipflop
-				flipflop_entradas memoria(display1[i],
+				flipflop_salidas memoria(display1[i],
 											selectorLedDisplay[i],
 											display2[i],
 											carry,
