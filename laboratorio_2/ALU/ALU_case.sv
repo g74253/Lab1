@@ -126,7 +126,7 @@ module ALU_case #(parameter n=4)
 					resultado = temp_resultado_mod;
 					carry = temp_carry_mod;
 					cero = temp_cero_mod;
-					negativo = temp_negativo_mod;
+					negativo = 0;
 					desbordamiento = temp_desbordamiento_mod;
 				end
 			4'b0110:// and

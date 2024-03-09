@@ -20,7 +20,7 @@ module ALU_deco #(parameter n=4)
 	assign selectorLedDisplay[1]= ~selector[1];
 	assign selectorLedDisplay[2]= ~selector[2];
 	assign selectorLedDisplay[3]= ~selector[3];
-	ALU_case calculadora(.entrada1(entrada1),.entrada2(entrada2),.selector(selectorLedDisplay),.resultado(resultado),.carry(carry),.cero(cero));
+	ALU_case calculadora(.entrada1(entrada1),.entrada2(entrada2),.selector(selectorLedDisplay),.resultado(resultado),.carry(carry),.negativo(negativo),.cero(cero),.desbordamiento(desbordamiento));
 	
 	decodificador d1(
 		.c(display1), 

@@ -5,6 +5,7 @@ module exponencial #(
     input logic [M-1:0] entrada2,
     output logic [M-1:0] resultado,
     output logic cero
+	 
 );
 
 logic [M-1:0] temp_resultado;
