@@ -70,11 +70,11 @@ always_comb
 
 assign en_setup = (state == 4'b0001 || state == 4'b0010);
 assign en_attack = (state == 4'b0011 || state == 4'b0100);
-assign en_check_pc_life = (state == 4'0101);
+assign en_check_pc_life = (state == 4'b0101);
 assign en_check_setup_random = state == 4'b0010;
 assign en_attack_pc = (state == 4'b0110 || state == 4'b0111);
 assign en_check_attack_random = state == 4'b0111;
-assign en_check_player_life = (state == 4'1000);
+assign en_check_player_life = (state == 4'b1000);
 assign gameover = (state == 4'b1001);
 
 
