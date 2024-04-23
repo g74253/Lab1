@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/simulation/modelsim
+vrandom_func
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1713755558
+!i10b 1
+!s100 WVcH[PRTKTD0K9zbnfdXU0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Il2mz1klPE4?VAAMP<_2TY2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1713736638
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_func.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_func.sv
+!i122 0
+L0 1 11
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1713755558.000000
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_func.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_func.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship
+Z9 tCvgOpt 0
+vrandom_tb
+R1
+R2
+!i10b 1
+!s100 CdUASBlD?XRUb7QeYKG=b1
+R3
+I=R=0_k[c?bTKicD[j@Gfn0
+R4
+S1
+R0
+w1713755500
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv
+!i122 1
+L0 1 22
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv|
+!i113 1
+R7
+R8
+R9
