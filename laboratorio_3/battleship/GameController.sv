@@ -1,18 +1,13 @@
-module Player (
-    input wire clk,                             // Reloj
-    input wire rst,                             // Reset
-    input wire [4:0] selected_row,             // Fila seleccionada por el jugador
-    input wire [4:0] selected_col,             // Columna seleccionada por el jugador
-    input wire [4:0] enemy_board [0:4][0:4],   // Tablero de la PC
-    output reg [4:0] player_board [0:4][0:4],  // Tablero del jugador
-    output reg player_hit,                     // Señal de impacto del jugador
-    output reg [3:0] player_life,              // Vida del jugador
-    output reg player_win,                     // Señal de victoria del jugador
-    output reg player_lose                     // Señal de derrota del jugador
+module GameController (
+    input logic clk,                             // Reloj
+    input logic rst,                             // Reset
+	 input logic player						//indica turno de jugador o pc
+    input logic row [4:0],             // Fila seleccionada por el jugador
+    input logic col [4:0],             // Columna seleccionada por el jugador
+    output logic [3:0] player_ships,     // barcos restantes del jugador
+	 output logic [3:0] pc_ships,              // barcos restantes jugador
+    output logic lose_win,                     // Señal de victoria o derrota
 );
-
-    // Parámetros
-    parameter WAIT_TIME = 15;  // Tiempo de espera en segundos
 
     // Declaración de estados del jugador
     typedef enum logic [3:0] {
@@ -22,12 +17,17 @@ module Player (
         CHECK_WIN,
         CHECK_LOSE
     } player_state_t;
+	 
+	 int player_board[4:0][4:0],   // Tablero jugador
+    int pc_board [4:0][4:0],  //tablero pc
 
     // Señales internas
     reg [3:0] player_state;
     reg [4:0] attack_row;
     reg [4:0] attack_col;
     reg [3:0] wait_counter;
+	 player_life <= 15;
+	 pc_life <= 15;
     reg hit;  // Señal de impacto del jugador
 
     // Lógica del jugador
