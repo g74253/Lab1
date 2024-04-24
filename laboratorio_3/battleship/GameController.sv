@@ -1,14 +1,5 @@
 module GameController (
     input logic clk,                             // Reloj
-<<<<<<< Updated upstream
-    input logic rst,                             // Reset
-	 input logic player						//indica turno de jugador o pc
-    input logic row [4:0],             // Fila seleccionada por el jugador
-    input logic col [4:0],             // Columna seleccionada por el jugador
-    output logic [3:0] player_ships,     // barcos restantes del jugador
-	 output logic [3:0] pc_ships,              // barcos restantes jugador
-    output logic lose_win,                     // Señal de victoria o derrota
-=======
     input logic rst,
 	 input logic boton_arriba,
 	 input logic boton_abajo,
@@ -16,51 +7,26 @@ module GameController (
 	 input logic boton_derecha,
 	 input logic boton_colocar,
 	 input int player_board[4:0][4:0],
-    input int pc_board [4:0][4:0]
-
->>>>>>> Stashed changes
+    input int pc_board [4:0][4:0],
+	 output int newPlayer_board[4:0][4:0],
+    output int newPc_board [4:0][4:0]
 );
 
     // Declaración de estados del jugador
     typedef enum logic [3:0] {
         IDLE,
-        ATTACK,
-        CHECK_HIT,
-        CHECK_WIN,
-        CHECK_LOSE
-    } player_state_t;
+        PLAYER_ATTACK,
+		  PC_ATTACK,
+        LIFE_CONTROL,
+        DSP_VGA,
+        WIN_LOSE
+    } game_state_t;
 	 
-	 int player_board[4:0][4:0],   // Tablero jugador
-    int pc_board [4:0][4:0],  //tablero pc
+	 
+	 int player_ships;     // barcos restantes del jugador
+	 int pc_ships;         // barcos restantes del jugador
+	 logic player_turn ;						//indica turno de jugador o pc
 
-    // Señales internas
-    reg [3:0] player_state;
-    reg [4:0] attack_row;
-    reg [4:0] attack_col;
-    reg [3:0] wait_counter;
-	 player_life <= 15;
-	 pc_life <= 15;
-    reg hit;  // Señal de impacto del jugador
-
-<<<<<<< Updated upstream
-    // Lógica del jugador
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            player_state <= IDLE;
-            player_hit <= 0;
-            player_win <= 0;
-            player_lose <= 0;
-            wait_counter <= 0;
-        end else begin
-            case (player_state)
-                IDLE: begin
-                    // Esperar a que el jugador seleccione una casilla
-                    if (selected_row != 5 && selected_col != 5) begin
-                        player_state <= ATTACK;
-                        attack_row <= selected_row;
-                        attack_col <= selected_col;
-                        wait_counter <= WAIT_TIME;  // Iniciar temporizador para el tiempo de espera
-=======
     logic [3:0] game_state;
 	 
 	 int player_life; //vida total del jugador 
@@ -73,10 +39,6 @@ module GameController (
 	 logic ena_attack_player;
 	 logic ena_attack_pc;
 	 logic ena_cont;
-
-	  int newPlayer_board[4:0][4:0];
-     int newPc_board [4:0][4:0];
-
 	 
 	 logic end_rowCol;
 	 logic end_attack_player;
@@ -86,20 +48,13 @@ module GameController (
 	 
 	 int selected_row; //fila elegida para atacar
 	 int selected_col; //col elegida para atacar
-
-
-	 int newPlayerLife;
-	 int newPcLife;
 	 
 	 logic first_execution_done = 0;
 	 
-
-
-
-
-
+	 
 	  initial begin
-		 
+		  selected_row = 4; //inicia en fila 4
+	     selected_col = 4; //inicia en columna 4
 		  player_ships = 5; //inicia con 5 barcos
 		  pc_ships = 5; //inicia con 5 barcos
 		  player_turn = 1	; //inicia jugando el player
@@ -110,27 +65,36 @@ module GameController (
 	 
 	 //modulo de ataque para el jugador, le pasa la matriz de la pc
 	 // y pasa la columna y fila para ataque
-	 AttackModule playerAttack(
-								.ena_attack(ena_attack_player),
-								.clk(clk),
-								.rst(rt),
-								.currentLife(pc_life),
-								.row(attack_row),
-								.col(attack_col),
-								.player(player_turn),
-								.newLife(newPcLife),
-								.newMatrix(newPc_board));
+	 AttackModule playerAttack(.ena_attack(ena_attack_player),
+	                           .clk(clk),
+										.rst(rt),
+										.row(attack_row),
+										.col(attack_col),
+										.player(player_turn),
+										.newLife(pc_life),
+										.end_attack(end_attack_player),
+										.newMatrix(newPc_board));
 										
 										
-
+	selectRowCol(.ena_rowCol(ena_rowCol),
+				    .boton_arriba(boton_arriba),
+				    .boton_abajo(boton_abajo),
+				    .boton_izquierda(boton_izquierda),
+				    .boton_derecha(boton_derecha),
+				    .rst(rst),
+				    .boton_colocar(boton_colocar),
+				    .row(selected_row),
+				    .col(selected_col)
+	);	
+		
 	 AttackModule pcAttack(.ena_attack(ena_attack_pc),
 	                       .clk(clk),
 			  		   		  .rst(rt),
-							  .currentLife(player_life),
-							  .row(selected_row),
-							  .col(selected_col),
-							  .player(pc_turn),
-						   	  .newLife(newPlayerLife),
+								  .row(selected_row),
+								  .col(selected_col),
+								  .player(pc_turn),
+						   	  .newLife(player_life),
+								  .end_attack(end_attack_pc),
 								  .newMatrix(newPlayer_board));
 								  
 	
@@ -150,22 +114,13 @@ module GameController (
 								 .col(selected_col),
 								 .end_rowCol(end_rowCol));				  
    
-
-			
-
-
     // Lógica del jugador
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             game_state <= IDLE;
-			player_life <= 15;
-	        pc_life <= 15;
+				player_life <= 15;
+	         pc_life <= 15;
         end else begin
-			player_life <= newPlayerLife;
-			pc_life <= newPcLife;
-			
-
-
             case (game_state)
                 IDLE: begin
                     // Esperar a que el jugador seleccione una casilla
@@ -178,70 +133,51 @@ module GameController (
                 PLAYER_ATTACK: begin
 					 	 
 						 ena_rowCol = 1; 
-						 ena_attack_player <= 1;
+						 ena_attack_player = 1;
+						 
 						 
 						
 						 game_state <= LIFE_CONTROL;
 						 
                 end
                 PC_ATTACK: begin
-						ena_rowCol = 0; 
-						ena_attack_pc<=1;
+						
+											
 						game_state <= LIFE_CONTROL;
 										
 		
                 end
                 LIFE_CONTROL: begin
-
-					ena_attack_player <= 0;
-					ena_attack_pc<=0;
-
-
                     // Verificar si el jugador ha ganado
                     if (pc_life == 0) begin
                         game_state <= WIN_LOSE;
->>>>>>> Stashed changes
                     end
-                end
-                ATTACK: begin
-                    // Realizar el ataque
-                    player_board[attack_row][attack_col] <= 1;  // Marcar la casilla en el tablero del jugador
-                    player_state <= CHECK_HIT;
-                end
-                CHECK_HIT: begin
-                    // Verificar si el jugador ha impactado un barco enemigo
-                    if (attack_row != 5 && attack_col != 5) begin
-                        if (hit) begin
-                            player_hit <= 1;  // Señalizar que se ha realizado un impacto
-                        end else begin
-                            player_hit <= 0;
-                        end
-                        player_state <= CHECK_WIN;
-                    end
-                end
-                CHECK_WIN: begin
-                    // Verificar si el jugador ha ganado
-                    if (player_win == 1) begin
-                        // Señalizar que el jugador ha ganado
-                        player_state <= IDLE;  // Volver al estado IDLE
+						  if (player_life == 0) begin
+                        game_state <= WIN_LOSE;
+								
                     end else begin
-                        player_state <= CHECK_LOSE;  // Si no ha ganado, verificar si ha perdido
-                    end
+								game_state <= DSP_VGA;
+						  end
                 end
-                CHECK_LOSE: begin
-                    // Verificar si el jugador ha perdido
-                    if (player_lose == 1) begin
-                          // Señalizar que el jugador ha perdido
-                        player_state <= IDLE;  // Volver al estado IDLE
+                DSP_VGA: begin
+					 
+                    //se instancia modulo de adrian
+						 // Verificar si el jugador ha ganado
+						 
+                    if (player_turn == 1) begin
+								player_turn = 2;   
                     end else begin
-                        player_state <= IDLE;  // Si no ha perdido, volver al estado IDLE
-                    end
+								player_turn = 1;
+						  end 
+						  game_state <= IDLE;
+                end
+					 WIN_LOSE: begin
+					    //PASA ALGO ENCIENDE LED O MESTRA ALGO
+						 
+						 //se instancia modulo de adrian con info de final de juego
+		
                 end
             endcase
-            // Temporizador de espera
-            if (wait_counter > 0) begin
-                wait_counter <= wait_counter - 1;
-            end
         end
     end
 
