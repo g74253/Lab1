@@ -101,7 +101,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE GameLogic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE matrixOutlineDrawer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vga_controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE shipBlockDrawer.sv
 set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
 set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF

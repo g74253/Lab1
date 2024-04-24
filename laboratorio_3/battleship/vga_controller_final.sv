@@ -30,11 +30,20 @@ module vga_controller_final(
 	
 	int Mat1 [0:4][0:4]= '{
     '{0, 0, 0, 0, 0},
-    '{0, 0, 0, 0, 0},
-    '{0, 0, 6, 0, 0},
-    '{0, 0, 0, 0, 0},
-    '{0, 0, 0, 6, 0}
+    '{0, 0, 0,0, 0},
+    '{1, 0, 0, 0, 0},
+    '{0, 0, 13, 3, 3},
+    '{9, 0, 0, 2, 2}
 };
+
+	int Mat2 [0:4][0:4]= '{
+    '{0, 0, 0, 0, 0},
+    '{0, 0, 103,103, 103},
+    '{9, 0, 0, 0, 0},
+    '{0, 0, 0, 0, 0},
+    '{12, 12, 0, 0, 0}
+};
+
 int SEP_IZQ = 66; // Posición X de inicio de la matriz
 int SEP_VERT = 128; // Posición Y de inicio de la matriz
 	
@@ -44,7 +53,8 @@ int SEP_VERT = 128; // Posición Y de inicio de la matriz
 		.R(nR),
 		.G(nG),
 		.B(nB),
-		.matrix(Mat1)
+		.matrix(Mat1),
+		.matrix2(Mat2)
   );			
   
 
