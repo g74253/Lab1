@@ -23,20 +23,16 @@ module GameController (
     } game_state_t;
 	 
 	 
-	 int player_ships = 5;     // barcos restantes del jugador
-	 int pc_ships = 5; 
-	 logic player_turn = 1;						//indica turno de jugador o pc
+	 int player_ships;     // barcos restantes del jugador
+	 int pc_ships;         // barcos restantes del jugador
+	 logic player_turn ;						//indica turno de jugador o pc
 
     logic [3:0] game_state;
-    int attack_row;
-    int attack_col;
 	 
-	 int player_life = 15;
-	 int pc_life = 15;
+	 int player_life; //vida total del jugador 
+	 int pc_life; //vida de la pc
 	  
-	 int new_life; 
-	  
-	 logic timeout;
+	 logic timeout; //variable para indicar timeout del jugador 15 seg
 	 
 	 
 	 logic ena_rowCol;
@@ -50,27 +46,32 @@ module GameController (
 	 logic end_cont;
 	
 	 
-	 int selected_row;
-	 int selected_col;
+	 int selected_row; //fila elegida para atacar
+	 int selected_col; //col elegida para atacar
 	 
 	 logic first_execution_done = 0;
 	 
 	 
 	  initial begin
-		  selected_row = 4;
-	     selected_col = 4;
-        newPlayer_board = player_board;
+		  selected_row = 4; //inicia en fila 4
+	     selected_col = 4; //inicia en columna 4
+		  player_ships = 5; //inicia con 5 barcos
+		  pc_ships = 5; //inicia con 5 barcos
+		  player_turn = 1	; //inicia jugando el player
+		  player_life = 15; //inician con 15 de vida (5+4+3+2+1)
+        pc_life = 15; //inician con 15 de vida (5+4+3+2+1)
         newPc_board = pc_board;
      end
 	 
+	 //modulo de ataque para el jugador, le pasa la matriz de la pc
+	 // y pasa la columna y fila para ataque
 	 AttackModule playerAttack(.ena_attack(ena_attack_player),
 	                           .clk(clk),
 										.rst(rt),
 										.row(attack_row),
 										.col(attack_col),
 										.player(player_turn),
-										.life(pc_life),
-										.newLife(newLife),
+										.newLife(pc_life),
 										.end_attack(end_attack_player),
 										.newMatrix(newPc_board));
 										
@@ -92,8 +93,7 @@ module GameController (
 								  .row(selected_row),
 								  .col(selected_col),
 								  .player(pc_turn),
-						   	  .life(player_life),
-								  .newLife(newLife),
+						   	  .newLife(player_life),
 								  .end_attack(end_attack_pc),
 								  .newMatrix(newPlayer_board));
 								  
@@ -132,18 +132,11 @@ module GameController (
                 end
                 PLAYER_ATTACK: begin
 					 	 
-						 ena_rowCol = 1;
-						 if(end_rowCol == 1) begin
-							 ena_rowCol = 0;
-							 end_rowCol = 0;
-						 end	
-						 
+						 ena_rowCol = 1; 
 						 ena_attack_player = 1;
-						 if(end_attack_player == 1) begin
-							 ena_attack_player = 0;
-							 end_attack_player = 0;
-						 end	 
-							 
+						 
+						 
+						
 						 game_state <= LIFE_CONTROL;
 						 
                 end
