@@ -24,15 +24,20 @@ module GameStart(input logic boton_arriba,
 	
 	
 	/* Matriz del jugador */
-	setup player_setup (.en_setup(ena_setup),
+	Setup player_setup(
+							.en_setup(ena_setup),
 							.boton_arriba(boton_arriba),
 						   .boton_abajo(boton_abajo),
 						   .boton_izquierda(boton_izquierda),
 						   .boton_derecha(boton_derecha),
+							.cant_barco(cant_barco),
 							.rst(rst),
 							.boton_colocar(boton_colocar),
 						   .matrix(player_board),
 							.end_setup(player_end_setup));
+							
+							
+
 	
 	/* Matriz de la PC */
 	setup_pc pc_setup (.en_setup_pc(ena_setup_pc),

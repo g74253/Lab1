@@ -1,4 +1,4 @@
-module contador (input logic en_attack,
+module contador (input logic ena_attack,
 					  input logic clk,
 					  output logic timeout);
 						
@@ -6,7 +6,7 @@ module contador (input logic en_attack,
 	
 	int temp = 0;
 	always @ (posedge clk) begin
-		if (en_attack) begin
+		if (ena_attack) begin
 			temp = temp + 1;
 		end
 		else begin
