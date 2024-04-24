@@ -41,10 +41,10 @@ set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:14:01  APRIL 15, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_simulation
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (SystemVerilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
@@ -93,11 +93,7 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
-set_global_assignment -name PARTITION_COLOR 16764057 -entity vga_controller -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity vga_controller -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity vga_controller -section_id Top
 set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X1"
-set_global_assignment -name TOP_LEVEL_ENTITY GameStart
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity setup -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity setup -section_id Top
@@ -111,10 +107,6 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity Setup -section
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity Setup -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity Setup -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity Setup -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity GameStart -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity GameStart -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -entity GameStart -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE Player.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vertical_counter.sv
 set_global_assignment -name SYSTEMVERILOG_FILE shipBlockDrawer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE matrixOutlineDrawer.sv
@@ -137,6 +129,15 @@ set_global_assignment -name SYSTEMVERILOG_FILE GameController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE selectRowCol.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Setup.sv
 set_global_assignment -name TOP_LEVEL_ENTITY GameStart
-set_global_assignment -name TOP_LEVEL_ENTITY vga_controller
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity vga_controller -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity GameStart -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE GameStart_tb.sv
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH GameStart_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME GameStart_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id GameStart_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME GameStart_tb -section_id GameStart_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE GameStart_tb.sv -section_id GameStart_tb
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,20 +1,20 @@
-module setup_pc (input logic en_setup_pc,
+module setup_pc (input logic en_check_setup_random,
 						input logic rand_x,
 						input logic rand_y,
 						input logic [2:0] cant_barco,
 						input logic rst,
-						output logic [3:0] matrix[4:0][4:0],
+						output int matrix[4:0][4:0],
 						output logic end_setup);
 
-	logic [3:0] temp[4:0][4:0];
+	int temp[4:0][4:0];
 	logic [2:0] temp_cantship;
 	
-	always @(posedge en_setup_pc,
+	always @(posedge en_check_setup_random,
 				posedge rst) begin
 		if (rst) begin
 			temp = '{'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0}};
 			temp_cantship = cant_barco;
-		end else if (en_setup_pc) begin
+		end else if (en_check_setup_random) begin
 			case (temp_cantship)
 				3'b101: 	begin
 								temp_cantship = temp_cantship -1;

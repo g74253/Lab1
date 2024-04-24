@@ -120,8 +120,8 @@ module GameController (
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             game_state <= IDLE;
-			player_life <= 15;
-	        pc_life <= 15;
+				player_life <= 15;
+				pc_life <= 15;
         end else begin
 			player_life <= newPlayerLife;
 			pc_life <= newPcLife;

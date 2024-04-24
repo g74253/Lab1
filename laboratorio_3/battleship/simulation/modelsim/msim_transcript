@@ -13,7 +13,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:12 on Apr 21,2024
+# Start time: 10:28:14 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work altera_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
@@ -95,7 +95,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 21:12:14 on Apr 21,2024, Elapsed time: 0:00:02
+# End time: 10:28:16 on Apr 24,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -106,7 +106,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work lpm_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:14 on Apr 21,2024
+# Start time: 10:28:16 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
@@ -170,7 +170,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 21:12:14 on Apr 21,2024, Elapsed time: 0:00:00
+# End time: 10:28:16 on Apr 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -181,7 +181,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work sgate_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:15 on Apr 21,2024
+# Start time: 10:28:17 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
@@ -223,7 +223,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 21:12:15 on Apr 21,2024, Elapsed time: 0:00:00
+# End time: 10:28:17 on Apr 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -234,7 +234,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_mf_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:15 on Apr 21,2024
+# Start time: 10:28:17 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
@@ -364,7 +364,7 @@
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 21:12:17 on Apr 21,2024, Elapsed time: 0:00:02
+# End time: 10:28:19 on Apr 24,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_lnsim_ver
@@ -375,7 +375,7 @@
 # Modifying modelsim.ini
 # vlog -sv -work altera_lnsim_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:18 on Apr 21,2024
+# Start time: 10:28:19 on Apr 24,2024
 # vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv 
 # -- Compiling package altera_lnsim_functions
 # -- Compiling package altera_generic_pll_functions
@@ -458,7 +458,7 @@
 # 	altera_iopll
 # 	fourteennm_altera_iopll
 # 	fourteennm_simple_iopll
-# End time: 21:12:19 on Apr 21,2024, Elapsed time: 0:00:01
+# End time: 10:28:21 on Apr 24,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_ver
@@ -469,7 +469,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:19 on Apr 21,2024
+# Start time: 10:28:21 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -483,19 +483,19 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 21:12:23 on Apr 21,2024, Elapsed time: 0:00:04
+# End time: 10:28:25 on Apr 24,2024, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 10
 # vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:23 on Apr 21,2024
+# Start time: 10:28:25 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 21:12:26 on Apr 21,2024, Elapsed time: 0:00:03
+# End time: 10:28:29 on Apr 24,2024, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:26 on Apr 21,2024
+# Start time: 10:28:29 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v 
 # -- Compiling UDP CYCLONEV_PRIM_DFFE
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS
@@ -635,7 +635,7 @@
 # 	cyclonev_mem_phy
 # 	cyclonev_oscillator
 # 	cyclonev_hps_interface_fpga2sdram
-# End time: 21:12:28 on Apr 21,2024, Elapsed time: 0:00:02
+# End time: 10:28:31 on Apr 24,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_hssi_ver
@@ -646,15 +646,15 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:28 on Apr 21,2024
+# Start time: 10:28:31 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 21:12:32 on Apr 21,2024, Elapsed time: 0:00:04
+# End time: 10:28:34 on Apr 24,2024, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:32 on Apr 21,2024
+# Start time: 10:28:34 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
 # -- Compiling module cyclonev_hssi_8g_pcs_aggregate
 # -- Compiling module cyclonev_hssi_8g_rx_pcs
@@ -754,7 +754,7 @@
 # 	arriav_hssi_avmm_interface
 # 	arriav_hssi_pma_hi_pmaif
 # 	arriav_hssi_pma_hi_xcvrif
-# End time: 21:12:32 on Apr 21,2024, Elapsed time: 0:00:00
+# End time: 10:28:35 on Apr 24,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_pcie_hip_ver
@@ -765,7 +765,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:33 on Apr 21,2024
+# Start time: 10:28:35 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -775,18 +775,18 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 21:12:37 on Apr 21,2024, Elapsed time: 0:00:04
+# End time: 10:28:40 on Apr 24,2024, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 6
 # vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:37 on Apr 21,2024
+# Start time: 10:28:40 on Apr 24,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
 # -- Compiling module cyclonev_hd_altpe2_hip_top
 # -- Compiling module arriav_hd_altpe2_hip_top
 # 
 # Top level modules:
 # 	cyclonev_hd_altpe2_hip_top
-# End time: 21:12:37 on Apr 21,2024, Elapsed time: 0:00:00
+# End time: 10:28:40 on Apr 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -798,34 +798,108 @@
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_func.sv}
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:38 on Apr 21,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_func.sv 
-# -- Compiling module random_func
+# Start time: 10:28:41 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv 
+# -- Compiling module setup_pc
 # 
 # Top level modules:
-# 	random_func
-# End time: 21:12:38 on Apr 21,2024, Elapsed time: 0:00:00
+# 	setup_pc
+# End time: 10:28:41 on Apr 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/contador.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:12:38 on Apr 21,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv 
-# -- Compiling module random_tb
+# Start time: 10:28:41 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/contador.sv 
+# -- Compiling module contador
 # 
 # Top level modules:
-# 	random_tb
-# End time: 21:12:38 on Apr 21,2024, Elapsed time: 0:00:00
+# 	contador
+# End time: 10:28:41 on Apr 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:41 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup.sv 
+# -- Compiling module Setup
+# 
+# Top level modules:
+# 	Setup
+# End time: 10:28:41 on Apr 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:41 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv 
+# -- Compiling module AttackModule
+# 
+# Top level modules:
+# 	AttackModule
+# End time: 10:28:41 on Apr 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:41 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv 
+# -- Compiling module GameStart
+# 
+# Top level modules:
+# 	GameStart
+# End time: 10:28:42 on Apr 24,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:42 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv 
+# -- Compiling module GameController
+# 
+# Top level modules:
+# 	GameController
+# End time: 10:28:42 on Apr 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/selectRowCol.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:42 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/selectRowCol.sv 
+# -- Compiling module selectRowCol
+# 
+# Top level modules:
+# 	selectRowCol
+# End time: 10:28:42 on Apr 24,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  random_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" random_tb 
-# Start time: 21:12:38 on Apr 21,2024
+# vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:28:42 on Apr 24,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship" C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv 
+# -- Compiling module GameStart_tb
+# 
+# Top level modules:
+# 	GameStart_tb
+# End time: 10:28:43 on Apr 24,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  GameStart_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" GameStart_tb 
+# Start time: 10:28:43 on Apr 24,2024
 # Loading sv_std.std
-# Loading work.random_tb
-# Loading work.random_func
+# Loading work.GameStart_tb
+# Loading work.GameStart
+# Loading work.Setup
+# Loading work.setup_pc
+# Loading work.GameController
+# Loading work.AttackModule
+# Loading work.contador
+# Loading work.selectRowCol
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (3) for port 'rand_x'. The port definition is at: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /GameStart_tb/juego/pc_setup File: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv Line: 44
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (3) for port 'rand_y'. The port definition is at: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /GameStart_tb/juego/pc_setup File: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv Line: 44
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'row'. The port definition is at: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv(6).
+#    Time: 0 ps  Iteration: 0  Instance: /GameStart_tb/juego/gameController/playerAttack File: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv Line: 74
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'col'. The port definition is at: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv(7).
+#    Time: 0 ps  Iteration: 0  Instance: /GameStart_tb/juego/gameController/playerAttack File: C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv Line: 74
 # 
 # add wave *
 # view structure
@@ -833,8 +907,8 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $stop    : C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv(20)
-#    Time: 410 ps  Iteration: 0  Instance: /random_tb
-# Break in Module random_tb at C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv line 20
-# End time: 21:17:28 on Apr 21,2024, Elapsed time: 0:04:50
-# Errors: 0, Warnings: 0
+# ** Note: $stop    : C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv(50)
+#    Time: 70 ps  Iteration: 0  Instance: /GameStart_tb
+# Break in Module GameStart_tb at C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv line 50
+# End time: 10:37:30 on Apr 24,2024, Elapsed time: 0:08:47
+# Errors: 0, Warnings: 4

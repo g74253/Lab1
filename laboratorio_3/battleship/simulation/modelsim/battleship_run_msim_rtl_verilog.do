@@ -45,11 +45,17 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_func.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/contador.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/selectRowCol.sv}
 
-vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/random_tb.sv}
+vlog -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship {C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  random_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  GameStart_tb
 
 add wave *
 view structure
