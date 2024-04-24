@@ -28,7 +28,13 @@ module vga_controller_final(
 
 	
 	
-	int Mat1 [0:4][0:4];
+	int Mat1 [0:4][0:4]= '{
+    '{0, 0, 0, 0, 0},
+    '{0, 0, 0, 0, 0},
+    '{0, 0, 6, 0, 0},
+    '{0, 0, 0, 0, 0},
+    '{0, 0, 0, 6, 0}
+};
 int SEP_IZQ = 66; // Posición X de inicio de la matriz
 int SEP_VERT = 128; // Posición Y de inicio de la matriz
 	
@@ -126,7 +132,7 @@ int SEP_VERT = 128; // Posición Y de inicio de la matriz
       begin 
 			
 				R <= nR;
-				G <=nG;
+				G <= nG;
 				B <= nB;
 				
 
