@@ -10,11 +10,12 @@ module GameStart(input logic boton_arriba,
 	logic en_setup = 1; //inicia el setup
 	logic [2:0] cant_barco = 3'b101 //cantidad de barcos = 5
 	int player_board[4:0][4:0];
-	logic end_setup
-
+	int pc_board[4:0][4:0];
+	logic player_end_setup;
+	logic pc_end_setup;
 	
 	/* Matriz del jugador */
-	playerSetUp setup (.en_setup(en_setup),
+	setup player_setup (.en_setup(en_setup),
 							.boton_arriba(boton_arriba),
 						   .boton_abajo(boton_abajo),
 						   .boton_izquierda(boton_izquierda),
@@ -22,47 +23,27 @@ module GameStart(input logic boton_arriba,
 							.rst(rst)
 							.boton_colocar(boton_colocar),
 						   .matrix(player_board),
-							.end_setup(end_setup);
+							.end_setup(player_end_setup);
 	
 	/* Matriz de la PC */
-	pcSetUp setup  (.en_setup(en_setup),
+	setup pc_setup (.en_setup(en_setup),
 							.boton_arriba(boton_arriba),
 						   .boton_abajo(boton_abajo),
 						   .boton_izquierda(boton_izquierda),
 						   .boton_derecha(boton_derecha),
 							.rst(rst)
 							.boton_colocar(boton_colocar),
-						   .matrix(player_board),
-							.end_setup(end_setup);
+						   .matrix(pc_board),
+							.end_setup(pc_end_setup);
 
 
 	// Controllador del juego
-	movement initial_shift (//.clk(clk),
-							.enable((!Q[1] & !Q[0])),
-							.direction(direction),
-							.matrix(matrix), 
-							.moved_matrix(moved_matrix), 
-							.ready(M));
-
-	// Summation
-	summation sum 		   (//.clk(clk),
-							.enable((!Q[1] & Q[0])),
-							.direction(direction),
-							.matrix(matrix_Q),
-							.summed_matrix(summed_matrix), 
-							.ready(S));
-
-	// Movement after Summation
-	movement final_shift   (//.clk(clk),
-						    .enable((Q[1] & !Q[0])),
-						    .direction(direction),
-						    .matrix(matrix_Q),
-						    .moved_matrix(moved_again_matrix), 
-						    .ready(F));
-
-	new_tile_gen new_tile  (.clk(clk),
-						    .enable((Q[1] & Q[0])),
-						    .rand_pos(position),
-						    .matrix_Q(matrix_Q),
-						    .matrix_D(new_tile_matrix));   				
+	GameController gameController (.clk(clk),
+											.rst(rt),
+											.matrix(matrix), 
+											.player_board(player_board), 
+											.pc_board(pc_board));
+						
+						
+endmodule				
 				
