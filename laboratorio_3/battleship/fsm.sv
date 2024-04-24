@@ -1,4 +1,4 @@
-module FSM(input logic clk, 
+module fsm(input logic clk, 
 			  input logic rst, 
 			  input logic iniciar,
 			  input logic end_setup,

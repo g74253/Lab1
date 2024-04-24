@@ -6,11 +6,11 @@ module setup(input logic en_setup,
 				input logic [2:0] cant_barco,
 				input logic rst,
 				input logic boton_colocar,
-				output int matrix[4:0][4:0],
+				output logic [3:0] matrix[4:0][4:0],
 				output logic end_setup);
 				
-	int temp[4:0][4:0];	
-	int temp_pos[1:0];
+	logic [3:0] temp[4:0][4:0];	
+	logic [2:0] temp_pos[1:0];
 	logic [2:0] temp_cantship;
 				
 	always @(posedge boton_arriba,
@@ -25,8 +25,7 @@ module setup(input logic en_setup,
 			temp_pos[0] = 4;//x
 			temp_pos[1] = 4;//y
 			temp_cantship = cant_barco;
-		end
-		else if (en_setup) begin
+		end else if (en_setup) begin
 			if(boton_arriba && temp_pos[1] != 4) begin
 				temp_pos[1] = temp_pos[1]+1;
 			end
