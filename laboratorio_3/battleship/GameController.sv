@@ -5,28 +5,26 @@ module GameController (
 	 input logic boton_abajo,
 	 input logic boton_izquierda,
 	 input logic boton_derecha,
-	 input logic boton_colocar
+	 input logic boton_colocar,
+	 input int player_board[4:0][4:0],
+    input int pc_board [4:0][4:0]
+
 );
 
     // Declaración de estados del jugador
     typedef enum logic [3:0] {
         IDLE,
-        ATTACK,
-        CHECK_HIT,
-        CHECK_WIN,
-        CHECK_LOSE
-    } player_state_t;
+        PLAYER_ATTACK,
+		  PC_ATTACK,
+        LIFE_CONTROL,
+        DSP_VGA,
+        WIN_LOSE
+    } game_state_t;
 	 
-	 int player_board[4:0][4:0];   // Tablero jugador
-    int pc_board [4:0][4:0];  //tablero pc
-
-    // Señales internas
-    reg [3:0] player_state;
-    reg [4:0] attack_row;
-    reg [4:0] attack_col;
-    reg [3:0] wait_counter;
-
-    reg hit;  // Señal de impacto del jugador
+	 
+	 int player_ships;     // barcos restantes del jugador
+	 int pc_ships;         // barcos restantes del jugador
+	 logic player_turn ;						//indica turno de jugador o pc
 
     logic [3:0] game_state;
 	 
@@ -60,11 +58,7 @@ module GameController (
 	 
 	 logic first_execution_done = 0;
 	 
-
-
-
-
-
+	 
 	  initial begin
 		 
 		  player_ships = 5; //inicia con 5 barcos
@@ -118,6 +112,7 @@ module GameController (
 								 .end_rowCol(end_rowCol));				  
    
 
+
 			
 
 
@@ -168,46 +163,32 @@ module GameController (
                     if (pc_life == 0) begin
                         game_state <= WIN_LOSE;
                     end
-                end
-                ATTACK: begin
-                    // Realizar el ataque
-                    player_board[attack_row][attack_col] <= 1;  // Marcar la casilla en el tablero del jugador
-                    player_state <= CHECK_HIT;
-                end
-                CHECK_HIT: begin
-                    // Verificar si el jugador ha impactado un barco enemigo
-                    if (attack_row != 5 && attack_col != 5) begin
-                        if (hit) begin
-                            player_hit <= 1;  // Señalizar que se ha realizado un impacto
-                        end else begin
-                            player_hit <= 0;
-                        end
-                        player_state <= CHECK_WIN;
-                    end
-                end
-                CHECK_WIN: begin
-                    // Verificar si el jugador ha ganado
-                    if (player_win == 1) begin
-                        // Señalizar que el jugador ha ganado
-                        player_state <= IDLE;  // Volver al estado IDLE
+						  if (player_life == 0) begin
+                        game_state <= WIN_LOSE;
+								
                     end else begin
-                        player_state <= CHECK_LOSE;  // Si no ha ganado, verificar si ha perdido
-                    end
+								game_state <= DSP_VGA;
+						  end
                 end
-                CHECK_LOSE: begin
-                    // Verificar si el jugador ha perdido
-                    if (player_lose == 1) begin
-                          // Señalizar que el jugador ha perdido
-                        player_state <= IDLE;  // Volver al estado IDLE
+                DSP_VGA: begin
+					 
+                    //se instancia modulo de adrian
+						 // Verificar si el jugador ha ganado
+						 
+                    if (player_turn == 1) begin
+								player_turn = 2;   
                     end else begin
-                        player_state <= IDLE;  // Si no ha perdido, volver al estado IDLE
-                    end
+								player_turn = 1;
+						  end 
+						  game_state <= IDLE;
+                end
+					 WIN_LOSE: begin
+					    //PASA ALGO ENCIENDE LED O MESTRA ALGO
+						 
+						 //se instancia modulo de adrian con info de final de juego
+		
                 end
             endcase
-            // Temporizador de espera
-            if (wait_counter > 0) begin
-                wait_counter <= wait_counter - 1;
-            end
         end
     end
 
