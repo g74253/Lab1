@@ -1,6 +1,6 @@
 module random_func (input logic clk,
 				  input logic rst,
-				  output [2:0] logic random ); 
+				  output logic[2:0]  random ); 
 				  
 	always @ (posedge clk, posedge rst)
 		if (rst)
