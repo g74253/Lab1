@@ -15,15 +15,31 @@ module GameStart(input logic boton_arriba,
 	logic pc_end_setup;
 	
 	/* Matriz del jugador */
+<<<<<<< Updated upstream
 	setup player_setup (.en_setup(en_setup),
+=======
+	Setup player_setup(
+							.en_setup(ena_setup),
+>>>>>>> Stashed changes
 							.boton_arriba(boton_arriba),
 						   .boton_abajo(boton_abajo),
 						   .boton_izquierda(boton_izquierda),
 						   .boton_derecha(boton_derecha),
+<<<<<<< Updated upstream
 							.rst(rst)
 							.boton_colocar(boton_colocar),
 						   .matrix(player_board),
 							.end_setup(player_end_setup);
+=======
+							.cant_barco(cant_barco),
+							.rst(rst),
+							.boton_colocar(boton_colocar),
+						   .matrix(player_board),
+							.end_setup(player_end_setup));
+							
+							
+
+>>>>>>> Stashed changes
 	
 	/* Matriz de la PC */
 	setup pc_setup (.en_setup(en_setup),
@@ -46,4 +62,3 @@ module GameStart(input logic boton_arriba,
 						
 						
 endmodule				
-				

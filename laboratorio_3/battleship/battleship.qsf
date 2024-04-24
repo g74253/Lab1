@@ -55,9 +55,38 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+<<<<<<< Updated upstream
 set_global_assignment -name SYSTEMVERILOG_FILE fsm.sv
 set_global_assignment -name SYSTEMVERILOG_FILE contador.sv
 set_global_assignment -name SYSTEMVERILOG_FILE setup.sv
+=======
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name SYSTEMVERILOG_FILE vga_controller_final.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vga_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vertical_counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Timer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE shipBlockDrawer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE matrixOutlineDrawer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE horizontal_counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE GameLogic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE clock_divider.sv
+set_global_assignment -name SYSTEMVERILOG_FILE random_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE setup_pc.sv
+set_global_assignment -name SYSTEMVERILOG_FILE divisor_frecuencia.sv
+set_global_assignment -name SYSTEMVERILOG_FILE fsm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE contador.sv
+set_global_assignment -name SYSTEMVERILOG_FILE setup.sv
+set_global_assignment -name SYSTEMVERILOG_FILE random_func.sv
+set_global_assignment -name SYSTEMVERILOG_FILE WinLoseModule.sv
+set_global_assignment -name SYSTEMVERILOG_FILE LifeControl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE AttackModule.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE GameStart.sv
+set_global_assignment -name SYSTEMVERILOG_FILE GameController.sv
+set_global_assignment -name SYSTEMVERILOG_FILE selectRowCol.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Setup.sv
+>>>>>>> Stashed changes
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

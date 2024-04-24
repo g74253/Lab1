@@ -1,24 +1,24 @@
-module setup(input logic en_setup,
-				input logic boton_arriba,
-				input logic boton_abajo,
-				input logic boton_izquierda,
-				input logic boton_derecha,
-				input logic [2:0] cant_barco,
-				input logic rst,
-				input logic boton_colocar,
-				output logic [3:0] matrix[4:0][4:0],
-				output logic end_setup);
-				
-	logic [3:0] temp[4:0][4:0];	
-	logic [2:0] temp_pos[1:0];
-	logic [2:0] temp_cantship;
-				
-	always @(posedge boton_arriba,
-				posedge boton_abajo,
-				posedge boton_izquierda,
-				posedge boton_derecha,
-				posedge boton_colocar,
-				posedge rst) begin
+module Setup(
+    input logic clk, // Si es necesario, agrega un reloj
+    input logic en_setup,
+    input logic boton_arriba,
+    input logic boton_abajo,
+    input logic boton_izquierda,
+    input logic boton_derecha,
+    input logic [2:0] cant_barco,
+    input logic rst,
+    input logic boton_colocar,
+    output int matrix[4:0][4:0],
+    output logic end_setup
+);
+
+    // Declara tus variables locales aquí
+    int temp[4:0][4:0];
+    logic temp_pos[1:0];
+    logic [2:0] temp_cantship;
+
+    // Proceso para la configuración del juego
+    always @(posedge clk or posedge rst)  begin
 				
 		if (rst) begin
 			temp = '{'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0}};
