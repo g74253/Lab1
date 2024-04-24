@@ -1,24 +1,11 @@
 module GameController (
     input logic clk,                             // Reloj
-<<<<<<< Updated upstream
-    input logic rst,                             // Reset
-	 input logic player						//indica turno de jugador o pc
-    input logic row [4:0],             // Fila seleccionada por el jugador
-    input logic col [4:0],             // Columna seleccionada por el jugador
-    output logic [3:0] player_ships,     // barcos restantes del jugador
-	 output logic [3:0] pc_ships,              // barcos restantes jugador
-    output logic lose_win,                     // Señal de victoria o derrota
-=======
     input logic rst,
 	 input logic boton_arriba,
 	 input logic boton_abajo,
 	 input logic boton_izquierda,
 	 input logic boton_derecha,
-	 input logic boton_colocar,
-	 input int player_board[4:0][4:0],
-    input int pc_board [4:0][4:0]
-
->>>>>>> Stashed changes
+	 input logic boton_colocar
 );
 
     // Declaración de estados del jugador
@@ -30,37 +17,17 @@ module GameController (
         CHECK_LOSE
     } player_state_t;
 	 
-	 int player_board[4:0][4:0],   // Tablero jugador
-    int pc_board [4:0][4:0],  //tablero pc
+	 int player_board[4:0][4:0];   // Tablero jugador
+    int pc_board [4:0][4:0];  //tablero pc
 
     // Señales internas
     reg [3:0] player_state;
     reg [4:0] attack_row;
     reg [4:0] attack_col;
     reg [3:0] wait_counter;
-	 player_life <= 15;
-	 pc_life <= 15;
+
     reg hit;  // Señal de impacto del jugador
 
-<<<<<<< Updated upstream
-    // Lógica del jugador
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            player_state <= IDLE;
-            player_hit <= 0;
-            player_win <= 0;
-            player_lose <= 0;
-            wait_counter <= 0;
-        end else begin
-            case (player_state)
-                IDLE: begin
-                    // Esperar a que el jugador seleccione una casilla
-                    if (selected_row != 5 && selected_col != 5) begin
-                        player_state <= ATTACK;
-                        attack_row <= selected_row;
-                        attack_col <= selected_col;
-                        wait_counter <= WAIT_TIME;  // Iniciar temporizador para el tiempo de espera
-=======
     logic [3:0] game_state;
 	 
 	 int player_life; //vida total del jugador 
@@ -200,7 +167,6 @@ module GameController (
                     // Verificar si el jugador ha ganado
                     if (pc_life == 0) begin
                         game_state <= WIN_LOSE;
->>>>>>> Stashed changes
                     end
                 end
                 ATTACK: begin
