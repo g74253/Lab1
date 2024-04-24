@@ -25,8 +25,7 @@ module Setup(
 			temp_pos[0] = 4;//x
 			temp_pos[1] = 4;//y
 			temp_cantship = cant_barco;
-		end
-		else if (en_setup) begin
+		end else if (en_setup) begin
 			if(boton_arriba && temp_pos[1] != 4) begin
 				temp_pos[1] = temp_pos[1]+1;
 			end

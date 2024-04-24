@@ -21,6 +21,44 @@ module vga_controller_final(
 	parameter int VSP = 2; 	//vertical Sync Time
 	parameter int VBP = 33;	//vertical back Display
 	
+	logic [7:0] nR;
+   logic [7:0] nG;
+   logic [7:0] nB;
+	
+
+	
+	
+	int Mat1 [0:4][0:4]= '{
+    '{0, 0, 0, 0, 0},
+    '{0, 0, 0,0, 0},
+    '{1, 0, 0, 0, 0},
+    '{0, 0, 13, 3, 3},
+    '{9, 0, 0, 2, 2}
+};
+
+	int Mat2 [0:4][0:4]= '{
+    '{0, 0, 0, 0, 0},
+    '{0, 0, 103,103, 103},
+    '{9, 0, 0, 0, 0},
+    '{0, 0, 0, 0, 0},
+    '{12, 12, 0, 0, 0}
+};
+
+int SEP_IZQ = 66; // Posición X de inicio de la matriz
+int SEP_VERT = 128; // Posición Y de inicio de la matriz
+	
+	matrixOutlineDrawer matrix_drawer(
+		.counterX(counterX),
+		.counterY(counterY),
+		.R(nR),
+		.G(nG),
+		.B(nB),
+		.matrix(Mat1),
+		.matrix2(Mat2)
+  );			
+  
+
+	
 	//outuputs
 	
 	assign SYNK = 0;
@@ -102,22 +140,12 @@ module vga_controller_final(
       end
     else if (CLK_IN)  
       begin 
-
-       
-        if (counterX>120 && counterX<240 && counterY>150 && counterY<255)
-              begin
-                R <= 8'b11100101;
-              G <= 8'b10011100;
-              B <= 8'b00010100;
-              end
-
-		
-			else begin
+			
+				R <= nR;
+				G <= nG;
+				B <= nB;
 				
-			R <= 8'b00000000;
-			G <= 8'b00000000;
-			B <= 8'b00000000;
-        end
+
 		end
 		
 
