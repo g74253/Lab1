@@ -1,0 +1,225 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/simulation/modelsim
+vAttackModule
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1713976121
+!i10b 1
+!s100 65`kRbQe[`fLiPcz_hOTd3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IaMiRdRD?4ifQMi7H_9;jc0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1713973179
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv
+!i122 3
+L0 1 40
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1713976121.000000
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/AttackModule.sv|
+!i113 1
+Z8 o-sv -work work
+Z9 !s92 -sv -work work +incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship
+Z10 tCvgOpt 0
+n@attack@module
+vcontador
+R1
+R2
+!i10b 1
+!s100 3XXg;_?KQK[dhHc[P:IK>2
+R3
+IWk6Q1ojL:0k_KnbOP<D;c1
+R4
+S1
+R0
+R5
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/contador.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/contador.sv
+!i122 1
+L0 1 19
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/contador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/contador.sv|
+!i113 1
+R8
+R9
+R10
+vGameController
+R1
+Z11 !s110 1713976122
+!i10b 1
+!s100 R8cTV@7mJQnIRA=R1eVIA2
+R3
+Ig71`ii^;Mh`Y3H0^;gJJL3
+R4
+S1
+R0
+w1713973937
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv
+!i122 5
+L0 1 195
+R6
+r1
+!s85 0
+31
+Z12 !s108 1713976122.000000
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameController.sv|
+!i113 1
+R8
+R9
+R10
+n@game@controller
+vGameStart
+R1
+R11
+!i10b 1
+!s100 GKl@@E:a@MDRNmVf[R8;g0
+R3
+ICYk[41G`B78bDNW5K3D?_2
+R4
+S1
+R0
+w1713974870
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv
+!i122 4
+L0 2 64
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart.sv|
+!i113 1
+R8
+R9
+R10
+n@game@start
+vGameStart_tb
+R1
+!s110 1713976123
+!i10b 1
+!s100 Q9JdF^:9EEC1Q5NDW:]@52
+R3
+IohN?fj<[ii?4VNJLi`[Ra3
+R4
+S1
+R0
+w1713975435
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv
+!i122 7
+L0 1 53
+R6
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/GameStart_tb.sv|
+!i113 1
+R8
+R9
+R10
+n@game@start_tb
+vselectRowCol
+R1
+R11
+!i10b 1
+!s100 aAOY8jK2N:O4WKNncG@3k0
+R3
+IiWaH2fdFzdfA8ZOl4L8^g3
+R4
+S1
+R0
+R5
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/selectRowCol.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/selectRowCol.sv
+!i122 6
+L0 1 46
+R6
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/selectRowCol.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/selectRowCol.sv|
+!i113 1
+R8
+R9
+R10
+nselect@row@col
+vSetup
+R1
+R2
+!i10b 1
+!s100 ];o?2MRbR=o[@5hZ]^n=n0
+R3
+I@U;jh[P7Vkh<aJQ8^<9UH1
+R4
+S1
+R0
+w1713975937
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup.sv
+!i122 2
+L0 1 92
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup.sv|
+!i113 1
+R8
+R9
+R10
+n@setup
+vsetup_pc
+R1
+R2
+!i10b 1
+!s100 ;YDTj0Qj:<TB496<aQ3000
+R3
+Ia^N99i46NChijBJJ1oP0O3
+R4
+S1
+R0
+w1713974689
+8C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv
+FC:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv
+!i122 0
+L0 1 66
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship|C:/Users/grero/OneDrive/Escritorio/gochoa_digital_design_lab_2024/laboratorio_3/battleship/setup_pc.sv|
+!i113 1
+R8
+R9
+R10
