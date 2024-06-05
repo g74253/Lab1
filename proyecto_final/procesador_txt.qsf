@@ -56,7 +56,13 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SYSTEMVERILOG_FILE control_deco_alu_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE control_deco.sv
+set_global_assignment -name SYSTEMVERILOG_FILE condition_check.sv
+set_global_assignment -name SYSTEMVERILOG_FILE control_deco_PC_logic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE control_deco_main_decoder.sv
 set_global_assignment -name MIF_FILE ROMem.mif
 set_global_assignment -name QIP_FILE inst_mem.qip
 set_global_assignment -name SYSTEMVERILOG_FILE mux_parametrizable.sv
 set_global_assignment -name SYSTEMVERILOG_FILE control_unit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE conditional_logic.sv
