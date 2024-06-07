@@ -66,3 +66,5 @@ set_global_assignment -name QIP_FILE inst_mem.qip
 set_global_assignment -name SYSTEMVERILOG_FILE mux_parametrizable.sv
 set_global_assignment -name SYSTEMVERILOG_FILE control_unit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE conditional_logic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE registro_unit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE imm_unit.sv
