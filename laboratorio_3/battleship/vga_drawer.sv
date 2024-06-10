@@ -1,4 +1,7 @@
-module vga_controller_final(
+module vga_drawer #(    
+	parameter int CELL_HORIZONTAL_LENGHT = 52,  // Tamaño de la matriz horizontal
+   parameter int CELL_VERTICAL_LENGHT = 40     // Tamaño de la matriz vertical
+)(
 	input logic CLK_IN,	// 25 MHz
 	input logic RST, 
 	output logic o_hsync,      // horizontal sync
@@ -8,7 +11,8 @@ module vga_controller_final(
 	output logic SYNC,
    output logic [7:0] R,
    output logic [7:0] G,
-   output logic [7:0] B );
+   output logic [7:0] B,
+	input int values[CELL_HORIZONTAL_LENGHT*CELL_VERTICAL_LENGHT]	);
 
 	//parametros horizontales
 	parameter int HD = 640; //Horizontal Display
@@ -24,41 +28,13 @@ module vga_controller_final(
 	logic [7:0] nR;
    logic [7:0] nG;
    logic [7:0] nB;
+	int currentDrawingValue;
 	
 
-	
-	
-	int Mat1 [0:4][0:4]= '{
-    '{0, 0, 0, 0, 0},
-    '{0, 0, 0,0, 0},
-    '{1, 0, 0, 0, 0},
-    '{0, 0, 13, 3, 3},
-    '{9, 0, 0, 2, 2}
-};
+	int SEP_IZQ = 66; // Posición X de inicio de la matriz
+	int SEP_VERT = 128; // Posición Y de inicio de la matriz
+		
 
-	int Mat2 [0:4][0:4]= '{
-    '{0, 0, 0, 0, 0},
-    '{0, 0, 103,103, 103},
-    '{9, 0, 0, 0, 0},
-    '{0, 0, 0, 0, 0},
-    '{12, 12, 0, 0, 0}
-};
-
-int SEP_IZQ = 66; // Posición X de inicio de la matriz
-int SEP_VERT = 128; // Posición Y de inicio de la matriz
-	
-	matrixOutlineDrawer matrix_drawer(
-		.counterX(counterX),
-		.counterY(counterY),
-		.R(nR),
-		.G(nG),
-		.B(nB),
-		.matrix(Mat1),
-		.matrix2(Mat2)
-  );			
-  
-
-	
 	//outuputs
 	
 	assign SYNK = 0;
@@ -66,6 +42,34 @@ int SEP_VERT = 128; // Posición Y de inicio de la matriz
 		
 	logic [9:0]  counterX = 0;
 	logic [9:0]  counterY = 0;	
+	
+	
+
+
+		
+	vga_ascii_drawer  #(
+        .CELL_HORIZONTAL_LENGHT(CELL_HORIZONTAL_LENGHT),
+        .CELL_VERTICAL_LENGHT(CELL_VERTICAL_LENGHT)
+    )  asciiDrawer(
+		.counterX(counterX),
+		.counterY(counterY),
+		.R(nR),
+		.G(nG),
+		.B(nB),
+		.values (values ),
+		.RST (RST)
+
+  );			
+  
+  
+
+	
+	
+	
+	
+	
+	
+	
 
 	//Contadore de Posicion
 		//Horizontal_position_counter    
