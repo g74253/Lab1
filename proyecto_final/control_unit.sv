@@ -1,7 +1,7 @@
 module control_unit (input logic[3:0]cond,
 							input logic [1:0]op,
 							input logic[5:0]funct,
-							input logic [3:0]rd),
+							input logic [3:0]rd,
 							input logic [3:0]aluflags,
 							input logic clk,
 							output logic pcsrc,
@@ -10,8 +10,8 @@ module control_unit (input logic[3:0]cond,
 							output logic[1:0]alucontrol,
 							output logic alusrc,
 							output logic [1:0]immsrc,
-							output logic regwrite
-							output logic [1:0]regsrc;
+							output logic regwrite,
+							output logic [1:0]regsrc);
 							
 	logic [1:0]flagw;
 	logic pcs,regw,memw;

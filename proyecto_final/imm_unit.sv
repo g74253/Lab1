@@ -46,7 +46,7 @@ always @(*) begin
 			extimm[31] = 1;
 		end
 		
-		else (inmediato[11] == 0) begin
+		else if (inmediato[11] == 0) begin
 			extimm[12] = 0;
 			extimm[13] = 0;
 			extimm[14] = 0;
@@ -84,7 +84,7 @@ always @(*) begin
 			extimm[31] = 1;
 		end
 		
-		else (inmediato[23] == 0) begin
+		else if (inmediato[23] == 0) begin
 			extimm[23] = 0;
 			extimm[24] = 0;
 			extimm[25] = 0;

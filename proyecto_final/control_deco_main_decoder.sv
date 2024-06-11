@@ -7,6 +7,7 @@ module control_deco_main_decoder (input logic [1:0]op,
 											 output logic alusrc,
 											 output logic [1:0]immsrc,
 											 output logic [1:0]regsrc,
+											 output logic branch,
 											 output logic aluop);
 
 always @(*)begin

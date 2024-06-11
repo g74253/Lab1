@@ -12,7 +12,7 @@ module conditional_logic(input logic [3:0]cond,
 	logic [1:0]flags32;
 	logic [1:0]flags10;
 	logic condex;
-	logic flagwrite; 	
+	logic [1:0]flagwrite; 	
 	condition_check cc (.cond(cond),
 						  .flags32(flags32),
 						  .flags10(flags10),
@@ -26,13 +26,13 @@ assign flagwrite = flagw && condex;
 always @ (posedge clk) begin
 
 	if (flagwrite[1] ==1) begin
-		flags32[0]== aluflags[2];
-		flags32[1]== aluflags[3];
+		flags32[0]= aluflags[2];
+		flags32[1]= aluflags[3];
 	end
 	
 	if (flagwrite[0] ==1) begin
-		flags10[0]== aluflags[0];
-		flags10[1]== aluflags[1];
+		flags10[0]= aluflags[0];
+		flags10[1]= aluflags[1];
 	end
 end
 								 
