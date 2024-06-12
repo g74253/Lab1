@@ -1,9 +1,13 @@
 module procesador (input logic clk,
 						 input logic rst,
 						 input logic wren_b,
+						 output logic Hsynq,
+					  	 output logic Vsynq, blank, sync,
+						 output logic [7:0] Green,
+						 output logic [7:0] Red,
+						 output logic [7:0] Blue,
+						 output logic clk_vga);
 						 input logic [31:0]address,
-						 output logic [7:0]q_b);
-	logic [31:0]pc;					 
 	logic [31:0]instr;				
 	inst_mem mem (.address(pc),
 					  .clock(clk),
@@ -81,7 +85,22 @@ module procesador (input logic clk,
 						  .q_a(readata),
 						  .q_b(q_b));
 						  
-									  
+						
+	vga_controller vga(
+	.clk(clk),
+	.rst(rst),
+	.button(button),
+	.q_b(q_b),
+	.Hsynq(Hsynq),
+	.Vsynq(Vsynq),
+	.blank(blank),
+	.sync(sync),
+	.Red(Red),
+	.Green(Green),
+	.Blue(Blue), 
+	.clk_vga(clk_vga));
+						  
+	logic [31:0]aluresult;								  
 	ALU_case alu (.entrada1(rd1),  
 					  .entrada2(ra3), 
 					  .alucontrol(alucontrol), 
