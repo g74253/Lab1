@@ -3,6 +3,7 @@ module GameStart(input logic boton_arriba,
 				input logic boton_abajo,
 				input logic boton_izquierda,
 				input logic boton_derecha,
+				input logic clk,
 				input logic rst,
 				input logic boton_colocar
 );
@@ -13,8 +14,8 @@ module GameStart(input logic boton_arriba,
 	logic pc_end_setup;
 	
 	logic iniciar;
-	logic ena_setup;
-	logic ena_setup_pc;
+	logic en_setup = 1;
+	logic en_check_setup_random;
 	
 	logic [2:0] rand_x;
 	logic [2:0] rand_y;
@@ -39,7 +40,7 @@ module GameStart(input logic boton_arriba,
 
 	
 	/* Matriz de la PC */
-	setup_pc pc_setup (.en_setup_pc(ena_setup_pc),
+	setup_pc pc_setup (.en_check_setup_random(en_check_setup_random),
 							.rand_x(rand_x),
 							.rand_y(rand_y),
 							.cant_barco(cant_barco),

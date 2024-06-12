@@ -14,11 +14,11 @@ module Setup(
 
     // Declara tus variables locales aquí
     int temp[4:0][4:0];
-    logic temp_pos[1:0];
+    int temp_pos [1:0];
     logic [2:0] temp_cantship;
 
     // Proceso para la configuración del juego
-    always @(posedge clk or posedge rst)  begin
+    always @(posedge clk or posedge rst or posedge boton_arriba or posedge boton_abajo or posedge boton_izquierda or posedge boton_derecha or posedge boton_colocar or posedge en_setup)  begin
 				
 		if (rst) begin
 			temp = '{'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0},'{0,0,0,0,0}};
@@ -27,16 +27,16 @@ module Setup(
 			temp_cantship = cant_barco;
 		end else if (en_setup) begin
 			if(boton_arriba && temp_pos[1] != 4) begin
-				temp_pos[1] = temp_pos[1]+1;
+				temp_pos[1] = temp_pos[1] + 1;
 			end
 			else if(boton_abajo && temp_pos[1] != 0) begin
-				temp_pos[1] = temp_pos[1]-1;
+				temp_pos[1] = temp_pos[1] - 1;
 			end
 			else if(boton_izquierda && temp_pos[0] != 4 ) begin
-				temp_pos[0] = temp_pos[0]+1;
+				temp_pos[0] = temp_pos[0] + 1;
 			end
 			else if(boton_derecha && temp_pos[0] != 0) begin
-				temp_pos[0] = temp_pos[0]-1;
+				temp_pos[0] = temp_pos[0] - 1;
 			end
 			else if(boton_colocar) begin
 				case (temp_cantship)
