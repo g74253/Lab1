@@ -27,6 +27,7 @@ module control_deco(input logic [1:0]op,
 											 .alusrc(alusrc),
 											 .immsrc(immsrc),
 											 .regsrc(regsrc),
+											 .branch(branch),
 											 .aluop(aluop));
 											 
 	control_deco_alu_decoder cdad (.aluop(aluop),

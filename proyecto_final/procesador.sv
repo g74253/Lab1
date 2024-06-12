@@ -1,7 +1,9 @@
 module procesador (input logic clk,
+						 input logic rst,
 						 input logic wren_b,
+						 input logic [31:0]address,
 						 output logic [7:0]q_b);
-						 
+	logic [31:0]pc;					 
 	logic [31:0]instr;				
 	inst_mem mem (.address(pc),
 					  .clock(clk),
@@ -16,6 +18,10 @@ module procesador (input logic clk,
 	logic	[1:0]immsrc;
 	logic	regwrite;
 	logic	[1:0]regsrc;
+	logic [31:0]pcplus4;	
+	logic [31:0]pcplus8;	
+	logic [3:0]ra4;
+	logic [31:0]aluresult;
 	control_unit control (.cond(instr[31:28]),
 								 .op(instr[27:26]),
 								 .funct(instr[25:20]),
@@ -66,7 +72,7 @@ module procesador (input logic clk,
 									  .final_output(ra3));
 	logic [7:0]readata;								  
 	data_mem datmem (.address_a(aluresult),
-						  .address_b(),
+						  .address_b(address),
 						  .clock(clk),
 						  .data_a(rd2),
 						  .data_b(),
@@ -75,7 +81,7 @@ module procesador (input logic clk,
 						  .q_a(readata),
 						  .q_b(q_b));
 						  
-	logic [31:0]aluresult;								  
+									  
 	ALU_case alu (.entrada1(rd1),  
 					  .entrada2(ra3), 
 					  .alucontrol(alucontrol), 
@@ -85,34 +91,31 @@ module procesador (input logic clk,
 					  .negativo(aluflags[0]),
 					  .desbordamiento(aluflags[3]));
 	
-	logic [3:0]ra4;						 
+							 
 	mux_parametrizable mux_d (.input1(readata),
 									  .input2(aluresult),
 									  .select(memtoreg),
 									  .final_output(ra4));	
+									  
+						  
+	adder #(32)adder1 (.a(pc), 
+							 .b(32'b001), 
+							 .y(pcplus4));
+							
+	adder #(32)adder2 (.a(pcplus4), 
+							 .b(32'b001), 
+							 .y(pcplus8));
 
-	logic [3:0]ra5;						 
-	mux_parametrizable mux_e (.input1(ra4),
-									  .input2(pcplus4),
+	logic [31:0]ra5;						 
+	mux_parametrizable mux_e (.input1(pcplus4),
+									  .input2(ra4),
 									  .select(pcsrc),
-									  .final_output(ra5));
-	logic rst;
-   logic [3:0]pc;	
-	pc_mem pcmem (.clk(clk),
-					  .rst(rst),
-					  .pcnext(ra5),
-					  .pc(pc));
+									  .final_output(ra5));	
+	pc_mem #(32)pcmem (.clk(clk),
+							.rst(rst),
+							.pcnext(ra5),
+							.pc(pc));
 					  
-	logic [31:0]pcplus4;								  
-	ALU_case add4 (.entrada1(pc),  
-					  .entrada2(1'b1), 
-					  .alucontrol(2'b00), 
-					  .resultado(pcplus4));
-					  
-	logic [31:0]pcplus8;								  
-	ALU_case add8 (.entrada1(1'b1),  
-					  .entrada2(pcplus4), 
-					  .alucontrol(2'b00), 
-					  .resultado(pcplus8));
+								  
 						 
 endmodule

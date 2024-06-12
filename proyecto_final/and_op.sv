@@ -7,7 +7,7 @@ module and_op
 	
 	output logic [M-1:0] Resultado;
 
-	output					cero;
+	output logic cero;
 	
 	always @ (expresionA or expresionB) begin
 	
@@ -17,7 +17,11 @@ module and_op
 		
 		end
 		
-		cero = ~(Resultado || '0);
+		if (Resultado == 0) begin
+			cero = 1;
+		end else begin
+			cero = 0;
+		end
 		
 	end
 		
