@@ -17,7 +17,7 @@ always @ (posedge clk) begin
 	
 end
 
-assign rd1 = register[a1];
-assign rd2 = register[a2];							
+	assign rd1 = (a1 == 4'b1111) ? r15 : register[a1];
+	assign rd2 = (a2 == 4'b1111) ? r15 : register[a2];						
 						
 endmodule
