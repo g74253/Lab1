@@ -5,9 +5,12 @@ module procesador (input logic clk,
 					  	 output logic Vsynq, blank, sync,
 						 output logic [7:0] Green,
 						 output logic [7:0] Red,
+						 output logic [7:0]q_b,
 						 output logic [7:0] Blue,
-						 output logic clk_vga);
 						 input logic [31:0]address,
+						 
+						 output logic clk_vga);
+	logic [31:0]pc;							 
 	logic [31:0]instr;				
 	inst_mem mem (.address(pc),
 					  .clock(clk),
@@ -24,8 +27,9 @@ module procesador (input logic clk,
 	logic	[1:0]regsrc;
 	logic [31:0]pcplus4;	
 	logic [31:0]pcplus8;	
+	
 	logic [3:0]ra4;
-	logic [31:0]aluresult;
+	
 	control_unit control (.cond(instr[31:28]),
 								 .op(instr[27:26]),
 								 .funct(instr[25:20]),
@@ -74,6 +78,9 @@ module procesador (input logic clk,
 									  .input2(extimm),
 									  .select(alusrc),
 									  .final_output(ra3));
+									  
+									  
+
 	logic [7:0]readata;								  
 	data_mem datmem (.address_a(aluresult),
 						  .address_b(address),
@@ -86,19 +93,9 @@ module procesador (input logic clk,
 						  .q_b(q_b));
 						  
 						
-	vga_controller vga(
-	.clk(clk),
-	.rst(rst),
-	.button(button),
-	.q_b(q_b),
-	.Hsynq(Hsynq),
-	.Vsynq(Vsynq),
-	.blank(blank),
-	.sync(sync),
-	.Red(Red),
-	.Green(Green),
-	.Blue(Blue), 
-	.clk_vga(clk_vga));
+										  
+								  
+									  
 						  
 	logic [31:0]aluresult;								  
 	ALU_case alu (.entrada1(rd1),  

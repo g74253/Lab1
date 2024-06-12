@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY vga_controller
+set_global_assignment -name TOP_LEVEL_ENTITY procesador_controller
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:09:47  MAY 22, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -55,6 +55,38 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_J14 -to Blue[7]
+set_location_assignment PIN_G15 -to Blue[6]
+set_location_assignment PIN_F15 -to Blue[5]
+set_location_assignment PIN_H14 -to Blue[4]
+set_location_assignment PIN_F14 -to Blue[3]
+set_location_assignment PIN_H13 -to Blue[2]
+set_location_assignment PIN_G13 -to Blue[1]
+set_location_assignment PIN_B13 -to Blue[0]
+set_location_assignment PIN_E11 -to Green[7]
+set_location_assignment PIN_F11 -to Green[6]
+set_location_assignment PIN_G12 -to Green[5]
+set_location_assignment PIN_G11 -to Green[4]
+set_location_assignment PIN_G10 -to Green[3]
+set_location_assignment PIN_H12 -to Green[2]
+set_location_assignment PIN_J10 -to Green[1]
+set_location_assignment PIN_J9 -to Green[0]
+set_location_assignment PIN_B11 -to Hsynq
+set_location_assignment PIN_F13 -to Red[7]
+set_location_assignment PIN_E12 -to Red[6]
+set_location_assignment PIN_D12 -to Red[5]
+set_location_assignment PIN_C12 -to Red[4]
+set_location_assignment PIN_B12 -to Red[3]
+set_location_assignment PIN_E13 -to Red[2]
+set_location_assignment PIN_C13 -to Red[1]
+set_location_assignment PIN_A13 -to Red[0]
+set_location_assignment PIN_D11 -to Vsynq
+set_location_assignment PIN_F10 -to blank
+set_location_assignment PIN_AF14 -to clk
+set_location_assignment PIN_A11 -to clk_vga
+set_location_assignment PIN_AA14 -to rst
+set_location_assignment PIN_C10 -to sync
+set_global_assignment -name SYSTEMVERILOG_FILE procesador_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE clock_divider.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vga_drawer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vga_controller.sv
@@ -82,71 +114,40 @@ set_global_assignment -name QIP_FILE data_mem.qip
 set_global_assignment -name SYSTEMVERILOG_FILE procesador.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU_case.sv
 set_global_assignment -name SYSTEMVERILOG_FILE pc_mem.sv
-set_location_assignment PIN_J14 -to Blue[7]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[7]
-set_location_assignment PIN_G15 -to Blue[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[6]
-set_location_assignment PIN_F15 -to Blue[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[5]
-set_location_assignment PIN_H14 -to Blue[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[4]
-set_location_assignment PIN_F14 -to Blue[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[3]
-set_location_assignment PIN_H13 -to Blue[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[2]
-set_location_assignment PIN_G13 -to Blue[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[1]
-set_location_assignment PIN_B13 -to Blue[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[0]
-set_location_assignment PIN_E11 -to Green[7]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[7]
-set_location_assignment PIN_F11 -to Green[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[6]
-set_location_assignment PIN_G12 -to Green[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[5]
-set_location_assignment PIN_G11 -to Green[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[4]
-set_location_assignment PIN_G10 -to Green[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[3]
-set_location_assignment PIN_H12 -to Green[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[2]
-set_location_assignment PIN_J10 -to Green[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[1]
-set_location_assignment PIN_J9 -to Green[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[0]
-set_location_assignment PIN_B11 -to Hsynq
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Hsynq
-set_location_assignment PIN_F13 -to Red[7]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[7]
-set_location_assignment PIN_E12 -to Red[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[6]
-set_location_assignment PIN_D12 -to Red[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[5]
-set_location_assignment PIN_C12 -to Red[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[4]
-set_location_assignment PIN_B12 -to Red[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[3]
-set_location_assignment PIN_E13 -to Red[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[2]
-set_location_assignment PIN_C13 -to Red[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[1]
-set_location_assignment PIN_A13 -to Red[0]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[0]
-set_location_assignment PIN_D11 -to Vsynq
-set_instance_assignment -name IO_STANDARD "2.5 V" -to Vsynq
-set_location_assignment PIN_F10 -to blank
-set_instance_assignment -name IO_STANDARD "2.5 V" -to blank
-set_location_assignment PIN_AB12 -to button
-set_instance_assignment -name IO_STANDARD "2.5 V" -to button
-set_location_assignment PIN_AF14 -to clk
-set_instance_assignment -name IO_STANDARD "2.5 V" -to clk
-set_location_assignment PIN_A11 -to clk_vga
-set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_vga
-set_location_assignment PIN_AA14 -to rst
-set_instance_assignment -name IO_STANDARD "2.5 V" -to rst
-set_location_assignment PIN_C10 -to sync
-set_instance_assignment -name IO_STANDARD "2.5 V" -to sync
+set_global_assignment -name SYSTEMVERILOG_FILE procesador_controller.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Blue[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Green[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Hsynq
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Red[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Vsynq
+set_instance_assignment -name IO_STANDARD "2.5 V" -to blank
+set_instance_assignment -name IO_STANDARD "2.5 V" -to button
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_vga
+set_instance_assignment -name IO_STANDARD "2.5 V" -to rst
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sync
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

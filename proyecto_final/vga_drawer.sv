@@ -37,7 +37,7 @@ module vga_drawer #(
 
 	//outuputs
 	
-	assign SYNK = 0;
+
 	assign CLK_OUT = CLK_IN;		
 		
 	logic [9:0]  counterX = 0;
