@@ -31,7 +31,7 @@ module vga_ascii_drawer #(
 	 
 	 ascii_decoder asciiDecoder(
 		  .ascii_code(values[AsciiCodeRelativeToCellPosition]),
-		  .pattern (pattern ),
+		  .pattern (pattern)
 	 );
 	 
 	 

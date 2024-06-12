@@ -1,38 +1,21 @@
-module resta 
-	#(parameter M = 4)
-	 (input logic [M - 1 : 0] A,
-	  input logic [M - 1 : 0] B,
-	  output logic [M - 1 : 0] R,
-	  output				   C,
-	  output	logic		N,
-	  output					V,
-	  output					Z);
-	  
-	logic [M : 0] cins;
-	
-	assign cins[0] = 1'b1;
+module resta
+    #(parameter n = 32)
+    (
+        input logic [n-1:0] entrada1,
+        input logic [n-1:0] entrada2,
+        output logic [n-1:0] resultado,
+        output logic carry,
+        output logic negativo,
+        output logic desbordamiento,
+        output logic cero
+    );
 
-	genvar i;
-	
-	assign N = (B>A);
-	
-	assign Z = B==A;
-	
-	
-	generate
-	
-		
-		for (i = 0; i < M; i += 1) begin : GenSumadores
+    logic [n-1:0] complemento2;
 
-			suma sumador (.entrada1(A[i]), .entrada2(~B[i] ), .carry_in(cins[i]), .carry_out(cins[i + 1]),
-									.resultado(R[i]));
-
-		end
-		
-	endgenerate
-	
-	assign C = cins[M];
-	
-
+    assign complemento2 = ~entrada2 + 1; // complemento a 2 de entrada2
+    assign {carry, resultado} = entrada1 + complemento2;
+    assign negativo = resultado[n-1];
+    assign desbordamiento = (entrada1[n-1] != complemento2[n-1]) && (resultado[n-1] != entrada1[n-1]);
+    assign cero = (resultado == 0);
 
 endmodule
