@@ -4,7 +4,7 @@ module pc_mem #(parameter n=8)(input logic clk,
 										output logic [n-1:0]pc);
 										
 always_ff @(posedge clk, posedge rst)
-	if (rst) pc <= 0;
-	else pc <= pcnext;
+	if (rst) pc = 0;
+	else pc = pcnext;
 	
 endmodule

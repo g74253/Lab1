@@ -1,9 +1,9 @@
 module control_deco_PC_logic(input logic [3:0]rd ,
 									  input logic branch,
 									  input logic regw,
-									  output pcs);
+									  output logic pcs);
 									  
-assign pcs = ((rd == 15) & regw)|branch;
+assign pcs = ((rd == 4'b1111) & regw)|branch;
 
 endmodule
 
